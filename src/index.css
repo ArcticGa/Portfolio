@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap');
+@import 'tailwindcss';
+
+@custom-variant light (&:where(.light, .light *));
+
+/* -------------------- ПЕРЕМЕННЫЕ И УТИЛИТЫ TAILWIND -------------------- */
+@theme {
+	--container-width: 1250px;
+	--header-hight: 75px;
+
+	--font-titles: 'Pacifico', sans-serif;
+	--font-texts: 'Inter', sans-serif;
+
+	--spacing-main-padding: 6rem;
+
+	--color-background: #21202b;
+	--color-backgroundWhite: #f4f1eb;
+	--color-primary: #161528;
+	--color-base: #f4f1eb;
+	--color-gray: #c6c6c6;
+}
+
+@layer utilities {
+	.main-section {
+		height: calc(100vh - var(--header-hight));
+	}
+}
+
+/* ----------------------- БАЗОВЫЕ СТИЛИ ----------------------- */
+html,
+body,
+#root {
+	font-family: var(--font-texts);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+html {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+* {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ----------------------- CSS ----------------------- */
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	height: var(--header-hight);
+}
+
+main {
+	padding-top: var(--header-hight);
+}
