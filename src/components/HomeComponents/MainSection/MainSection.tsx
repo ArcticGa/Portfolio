@@ -3,12 +3,12 @@ import Text from './Text'
 
 const MainSection = () => {
 	return (
-		<section className='flex main-section max-lg:flex-col-reverse'>
+		<div className='flex main-section max-lg:flex-col-reverse'>
 			<Text />
-			<div className='flex-1 rounded-xl overflow-hidden'>
+			<div className='flex-1 rounded-xl overflow-hidden z-0'>
 				<Scene />
 			</div>
-		</section>
+		</div>
 	)
 }
 

@@ -1,11 +1,14 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { AnimatePresence, motion, type Variants } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import InfoSection from '../components/HomeComponents/InfoSection/InfoSection'
 import MainSection from '../components/HomeComponents/MainSection/MainSection'
+import { setScene } from '../redux/slices/scenesSlice'
+import { useAppDispatch, useAppSelector } from '../redux/store'
 
 const Home = () => {
-	const [scene, setScene] = useState(0)
-	const navigate = useNavigate()
+	const dispatch = useAppDispatch()
+	const { scene } = useAppSelector(state => state.scenesSlice)
+	const prevScene = useRef(scene)
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
@@ -16,8 +19,7 @@ const Home = () => {
 	}, [])
 
 	const handleScroll = (e: WheelEvent) => {
-		if (e.deltaY > 0) setScene(1)
-		if (e.deltaY < 0) setScene(0)
+		if (e.deltaY > 0) dispatch(setScene(1))
 	}
 
 	useEffect(() => {
@@ -25,17 +27,38 @@ const Home = () => {
 		return () => window.removeEventListener('wheel', handleScroll)
 	}, [])
 
+	const direction = scene > prevScene.current ? 1 : -1
+	prevScene.current = scene
+
+	const variants: Variants = {
+		hidden: (dir: number) => ({
+			opacity: 0,
+			y: dir > 0 ? 60 : -60,
+		}),
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.4, ease: 'easeOut' },
+		},
+		exit: (dir: number) => ({
+			opacity: 0,
+			y: dir > 0 ? -60 : 60,
+			transition: { duration: 0.4, ease: 'easeOut' },
+		}),
+	}
+
 	return (
 		<main>
-			<div className='px-24 max-xl:px-18 max-lg:px-14 max-sm:px-8'>
-				<AnimatePresence>
+			<div className='px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm'>
+				<AnimatePresence mode='wait' custom={direction}>
 					{scene === 0 && (
 						<motion.div
 							key='scene1'
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -40 }}
-							transition={{ duration: 0.6 }}
+							custom={direction}
+							variants={variants}
+							initial='hidden'
+							animate='visible'
+							exit='exit'
 						>
 							<MainSection />
 						</motion.div>
@@ -43,13 +66,13 @@ const Home = () => {
 					{scene === 1 && (
 						<motion.div
 							key='scene2'
-							className='flex flex-col gap-6 text-3xl font-bold'
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -40 }}
-							transition={{ duration: 0.6 }}
+							custom={direction}
+							variants={variants}
+							initial='hidden'
+							animate='visible'
+							exit='exit'
 						>
-							Aboba
+							<InfoSection />
 						</motion.div>
 					)}
 				</AnimatePresence>

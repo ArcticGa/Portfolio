@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import headerSlice from './slices/headerSlice'
+import scenesSlice from './slices/scenesSlice'
 
 export const store = configureStore({
 	reducer: {
 		headerSlice,
+		scenesSlice,
 	},
 })
 

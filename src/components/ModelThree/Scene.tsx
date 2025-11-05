@@ -24,12 +24,12 @@ export default function Scene() {
 	const [isIntroDone, setIsIntroDone] = useState(false)
 
 	useEffect(() => {
-		const timeout = setTimeout(() => setIsIntroDone(true), 2000)
+		const timeout = setTimeout(() => setIsIntroDone(true), 1450)
 		return () => clearTimeout(timeout)
 	}, [])
 
 	return (
-		<Canvas camera={{ position: [0, 20, 40], fov: 50 }}>
+		<Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
 			<ambientLight intensity={1} />
 			<directionalLight position={[5, 5, 5]} intensity={1.2} />
 			<Environment files='/public/hdr/venice_sunset_1k.hdr' />

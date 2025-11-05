@@ -29,14 +29,14 @@ const IntroScreen = ({ onFinish }: { onFinish: () => void }) => {
 
 	useEffect(() => {
 		if (!active) {
-			const timeout = setTimeout(() => onFinish(), 1500)
+			const timeout = setTimeout(() => onFinish(), 1650)
 			return () => clearTimeout(timeout)
 		}
 	}, [active, onFinish])
 
 	return (
 		<motion.div
-			className='fixed inset-0 flex flex-col items-center justify-center bg-background z-50'
+			className='fixed inset-0 flex flex-col items-center justify-center bg-background light:bg-base z-50'
 			initial={{ opacity: 1 }}
 			animate={{ opacity: 1 }}
 		>
@@ -56,7 +56,7 @@ const IntroScreen = ({ onFinish }: { onFinish: () => void }) => {
 			<div className='flex items-center justify-center text-white'>
 				<div className='fixed bottom-10 left-1/2 -translate-x-1/2 w-[300px] h-1 bg-white/20 overflow-hidden rounded-full'>
 					<motion.div
-						className='h-full bg-white'
+						className='h-full bg-base light:bg-primary'
 						initial={{ width: 0 }}
 						animate={{ width: `${progress}%` }}
 						transition={{ ease: 'easeOut', duration: 0.3 }}

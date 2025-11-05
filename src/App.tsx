@@ -48,7 +48,7 @@ const App = () => {
 						<>
 							<Header />
 							<Routes location={location} key={location.pathname}>
-								<Route path='/' element={<Home key='home' />} />
+								<Route path='/' element={<Home />} />
 							</Routes>
 						</>
 					)}

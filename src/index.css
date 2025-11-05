@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
 @import 'tailwindcss';
 
 @custom-variant light (&:where(.light, .light *));
@@ -6,12 +6,14 @@
 /* -------------------- ПЕРЕМЕННЫЕ И УТИЛИТЫ TAILWIND -------------------- */
 @theme {
 	--container-width: 1250px;
-	--header-hight: 75px;
+	--header-hight: 105px;
 
-	--font-titles: 'Pacifico', sans-serif;
 	--font-texts: 'Inter', sans-serif;
 
-	--spacing-main-padding: 6rem;
+	--spacing-container: 96px;
+	--spacing-container-xl: 72px;
+	--spacing-container-lg: 56px;
+	--spacing-container-sm: 32px;
 
 	--color-background: #21202b;
 	--color-backgroundWhite: #f4f1eb;
@@ -34,7 +36,6 @@ body,
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	scroll-behavior: smooth;
 }
 
 html {
@@ -48,12 +49,12 @@ html {
 header {
 	position: fixed;
 	width: 100%;
+	z-index: 50;
 	top: 0;
 	left: 0;
-	z-index: 50;
 	height: var(--header-hight);
 }
 
 main {
-	padding-top: var(--header-hight);
+	margin-top: var(--header-hight);
 }

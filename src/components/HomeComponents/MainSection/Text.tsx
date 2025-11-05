@@ -21,17 +21,16 @@ const Text = () => {
 	}
 
 	const mainVariants: Variants = {
-		hidden: { y: 50, opacity: 0, rotate: 1 },
+		hidden: { opacity: 0, y: 0 },
 		visible: {
 			y: 0,
 			opacity: 1,
-			rotate: 0,
-			transition: { duration: 0.4, ease: 'easeInOut', delay: 0.5 },
+			transition: { duration: 0.5, ease: 'easeInOut', delay: 0.2 },
 		},
 	}
 
 	return (
-		<div className='flex-1 flex flex-col items-start justify-center pb-16 pl-22 max-lg:items-center max-lg:justify-start max-lg:p-0'>
+		<div className='relative flex-1 flex flex-col items-start justify-center pb-22 max-lg:items-center max-lg:justify-start max-lg:p-0'>
 			<motion.div
 				className='max-w-35 w-full text-center overflow-hidden rounded-md bg-base text-primary light:bg-primary light:text-base'
 				initial='hidden'
@@ -52,7 +51,7 @@ const Text = () => {
 				</AnimatePresence>
 			</motion.div>
 			<motion.h1
-				className='font-texts text-6xl my-10 font-bold max-lg:my-5 max-lg:text-center max-sm:text-5xl'
+				className='font-texts text-6xl my-10 font-bold max-lg:my-5 max-lg:text-center max-sm:text-5xl max-sm:my-3'
 				initial='hidden'
 				animate='visible'
 				variants={mainVariants}
@@ -61,13 +60,26 @@ const Text = () => {
 				<div>{t('nickname')}</div>
 			</motion.h1>
 			<motion.p
-				className='max-w-130 max-h-20 h-full text-gray light:text-primary max-lg:text-center max-lg:max-h-max max-sm:text-sm'
+				className='max-w-130 text-gray light:text-primary max-lg:text-center max-lg:max-h-max max-sm:text-sm'
 				initial='hidden'
 				animate='visible'
 				variants={mainVariants}
 			>
 				{t('welcome')}
 			</motion.p>
+
+			<div className='absolute bottom-20 left-0 w-1 h-20 overflow-hidden flex flex-col items-center max-lg:hidden'>
+				<motion.div
+					className='w-0.5 h-6 bg-base light:bg-primary rounded'
+					initial={{ y: 80 }}
+					animate={{ y: -30 }}
+					transition={{
+						duration: 1.7,
+						repeat: Infinity,
+						ease: 'linear',
+					}}
+				/>
+			</div>
 		</div>
 	)
 }

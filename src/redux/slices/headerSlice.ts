@@ -6,11 +6,13 @@ export type Theme = 'dark' | 'light'
 interface IHeaderSlice {
 	lang: Lang
 	theme: Theme
+	isSidebarOpened: boolean
 }
 
 const initialState: IHeaderSlice = {
 	lang: (localStorage.getItem('lang') as Lang) || 'ru',
 	theme: (localStorage.getItem('theme') as Theme) || 'dark',
+	isSidebarOpened: false,
 }
 
 export const headerSlice = createSlice({
@@ -23,8 +25,11 @@ export const headerSlice = createSlice({
 		setTheme(state, action: PayloadAction<Theme>) {
 			state.theme = action.payload
 		},
+		setSidebar(state, action: PayloadAction<boolean>) {
+			state.isSidebarOpened = action.payload
+		},
 	},
 })
 
-export const { setLang, setTheme } = headerSlice.actions
+export const { setLang, setTheme, setSidebar } = headerSlice.actions
 export default headerSlice.reducer

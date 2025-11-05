@@ -1,30 +1,31 @@
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { type ReactNode } from 'react'
+import { Link } from 'react-router'
+import { setSidebar } from '../../../redux/slices/headerSlice'
+import { useAppDispatch } from '../../../redux/store'
 
-const NavItem = ({ children }: { children: ReactNode }) => {
-	const controls = useAnimation()
+const NavItem = ({
+	linkTo,
+	children,
+}: {
+	linkTo: string
+	children: ReactNode
+}) => {
+	const dispatch = useAppDispatch()
 
 	return (
-		<motion.li
-			className='relative nav-item cursor-pointer'
-			onMouseEnter={() => controls.start({ width: '100%' })}
-			onMouseLeave={() => controls.start({ width: '0%' })}
-		>
-			<motion.span
-				className='relative z-10'
-				initial={{ y: 5, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				transition={{ duration: 0.3, ease: 'easeOut' }}
-			>
-				{children}
-			</motion.span>
-			<motion.span
-				className='absolute bottom-0 left-0 h-px bg-white light:bg-primary max-md:bg-primary max-md:light:bg-base'
-				initial={{ width: '0%' }}
-				animate={controls}
-				transition={{ duration: 0.3, ease: 'easeInOut' }}
-			/>
-		</motion.li>
+		<Link to={linkTo} onClick={() => dispatch(setSidebar(false))}>
+			<motion.li className='relative nav-item cursor-pointer'>
+				<motion.span
+					className='relative z-10'
+					initial={{ y: 5, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 0.3, ease: 'easeOut' }}
+				>
+					{children}
+				</motion.span>
+			</motion.li>
+		</Link>
 	)
 }
 

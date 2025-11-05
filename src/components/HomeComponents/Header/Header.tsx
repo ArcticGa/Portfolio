@@ -1,23 +1,22 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
-import { useState } from 'react'
+import { useRef } from 'react'
+import { useNavigate } from 'react-router'
 import { useTranslate } from '../../../hooks/useTranslate'
+import { setSidebar } from '../../../redux/slices/headerSlice'
+import { setScene } from '../../../redux/slices/scenesSlice'
+import { useAppDispatch, useAppSelector } from '../../../redux/store'
 import ChangeLangBtn from './ChangeLangBtn'
 import ChangeThemeBtn from './ChangeThemeBtn'
 import NavItem from './NavItem'
 
 const Header = () => {
-	const [isOpen, setIsOpen] = useState(false)
+	const dispatch = useAppDispatch()
+	const { theme, isSidebarOpened } = useAppSelector(state => state.headerSlice)
+	const { scene } = useAppSelector(state => state.scenesSlice)
+	const prevSceneRef = useRef(scene)
+
+	const navigate = useNavigate()
 	const t = useTranslate()
-
-	const logoVariants: Variants = {
-		hidden: { y: 5, opacity: 0 },
-		visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
-	}
-
-	const headerVariants: Variants = {
-		hidden: { y: 5, opacity: 0 },
-		visible: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.2 } },
-	}
 
 	const navVariants: Variants = {
 		hidden: { x: '100%' },
@@ -34,86 +33,134 @@ const Header = () => {
 		}),
 	}
 
-	const optionsVariants: Variants = {
-		hidden: { y: 5, opacity: 0 },
-		visible: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.5 } },
-	}
-
 	const burgerLine = {
 		closed: { rotate: 0, y: 0 },
 		openTop: { rotate: 45, y: 6 },
-		openBottom: { rotate: -45, y: -7 },
+		openBottom: { rotate: -45, y: -8 },
+	}
+
+	const direction = scene > prevSceneRef.current ? 1 : -1
+	prevSceneRef.current = scene
+
+	const variants: Variants = {
+		initial: (dir: number) => ({
+			opacity: 0,
+			y: dir > 0 ? 20 : -20,
+		}),
+		animate: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.3, ease: 'easeIn' },
+		},
+		exit: (dir: number) => ({
+			opacity: 0,
+			y: dir > 0 ? -20 : 20,
+			transition: { duration: 0.3, ease: 'easeIn' },
+		}),
+	}
+
+	const handleBackHome = () => {
+		navigate('/')
+		if (scene === 1) {
+			dispatch(setScene(0))
+		}
 	}
 
 	return (
-		<header className='flex items-center justify-between px-5 bg-transparent light:bg-transparent backdrop-blur-lg transition-all'>
-			<div className='flex items-center gap-20'>
-				<motion.div
-					className='bg-gray-600 px-2 py-1 rounded-xl text-white'
-					initial='hidden'
-					animate='visible'
-					variants={logoVariants}
-				>
-					Logo
-				</motion.div>
+		<header className='flex items-center justify-between px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm bg-background light:bg-base'>
+			<div
+				onClick={handleBackHome}
+				className='flex items-center gap-5 h-10 cursor-pointer'
+			>
+				<div className='bg-base light:bg-primary px-2 py-1 rounded-md text-white h-full w-10 flex items-center' />
 
-				<motion.ul
-					className='hidden md:flex gap-8'
-					initial='hidden'
-					animate='visible'
-					variants={headerVariants}
-				>
-					<NavItem>{t('projects')}</NavItem>
-					<NavItem>{t('skills')}</NavItem>
-					<NavItem>{t('about')}</NavItem>
-					<NavItem>{t('contact')}</NavItem>
-				</motion.ul>
+				<AnimatePresence mode='wait' custom={direction}>
+					{scene === 0 && (
+						<motion.div
+							key='alex'
+							custom={direction}
+							variants={variants}
+							initial='initial'
+							animate='animate'
+							exit='exit'
+							className='font-bold max-md:hidden'
+						>
+							ALEXANDER DEVALEX
+						</motion.div>
+					)}
+
+					{scene === 1 && (
+						<motion.div
+							key='btnBackHome'
+							custom={direction}
+							variants={variants}
+							initial='initial'
+							animate='animate'
+							exit='exit'
+							className='text-sm text-primary light:text-base bg-base light:bg-primary h-full flex items-center px-4 py-1 rounded-full font-bold max-md:hidden'
+						>
+							<div className='flex items-center gap-4'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									height='18'
+									viewBox='0 -960 960 960'
+									width='18'
+									fill={theme === 'dark' ? '#161528' : '#f4f1eb'}
+								>
+									<path d='M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z' />
+								</svg>
+								<span className='max-md:hidden'>ВЕРНУТЬСЯ НА ГЛАВНУЮ</span>
+							</div>
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
 
-			<motion.div
-				className='flex items-center gap-4'
-				initial='hidden'
-				animate='visible'
-				variants={optionsVariants}
-			>
+			<div className='flex items-center gap-4'>
 				<div className='flex items-center gap-1 text-sm font-bold'>
 					<ChangeLangBtn selectedLang='ru' />
 					<ChangeLangBtn selectedLang='en' />
 				</div>
 				<ChangeThemeBtn />
-			</motion.div>
+			</div>
 
 			<div
 				className={`md:hidden cursor-pointer z-50`}
-				onClick={() => setIsOpen(!isOpen)}
+				onClick={() => dispatch(setSidebar(!isSidebarOpened))}
 			>
 				<motion.div
-					animate={isOpen ? 'openTop' : 'closed'}
+					animate={isSidebarOpened ? 'openTop' : 'closed'}
 					variants={burgerLine}
 					className={`${
-						isOpen ? 'bg-primary light:bg-base' : 'bg-base light:bg-primary'
+						isSidebarOpened
+							? 'bg-primary light:bg-base'
+							: 'bg-base light:bg-primary'
 					} w-8 h-[3px] rounded origin-center`}
 				/>
 				<motion.div
-					animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+					animate={isSidebarOpened ? { opacity: 0 } : { opacity: 1 }}
 					className={`${
-						isOpen ? 'bg-primary light:bg-base' : 'bg-base light:bg-primary'
+						isSidebarOpened
+							? 'bg-primary light:bg-base'
+							: 'bg-base light:bg-primary'
 					} w-8 h-[3px] rounded my-1`}
 				/>
 				<motion.div
-					animate={isOpen ? 'openBottom' : 'closed'}
+					animate={isSidebarOpened ? 'openBottom' : 'closed'}
 					variants={burgerLine}
 					className={`${
-						isOpen ? 'bg-primary light:bg-base' : 'bg-base light:bg-primary'
+						isSidebarOpened
+							? 'bg-primary light:bg-base'
+							: 'bg-base light:bg-primary'
 					} w-8 h-[3px] rounded origin-center`}
 				/>
 			</div>
 
 			<AnimatePresence>
-				{isOpen && (
+				{isSidebarOpened && (
 					<motion.nav
 						key='sidebar'
-						className='fixed top-0 right-0 w-full h-screen text-primary light:text-base bg-base light:bg-primary z-30 flex justify-center items-center'
+						className='fixed top-0 right-0 w-full h-screen text-primary light:text-base bg-base light:bg-background flex justify-center items-center'
 						initial='hidden'
 						animate='visible'
 						exit='exit'
@@ -129,7 +176,7 @@ const Header = () => {
 										initial='hidden'
 										animate='visible'
 									>
-										<NavItem>{t(item)}</NavItem>
+										<NavItem linkTo={`/${item}`}>{t(item)}</NavItem>
 									</motion.div>
 								)
 							)}
