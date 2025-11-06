@@ -167,7 +167,7 @@ const Header = () => {
 						variants={navVariants}
 					>
 						<ul className='flex flex-col gap-12 text-3xl font-extrabold text-center'>
-							{(['projects', 'skills', 'about', 'contact'] as const).map(
+							{(['about', 'coding', 'artistSkills', 'portfolio'] as const).map(
 								(item, i) => (
 									<motion.div
 										key={item}

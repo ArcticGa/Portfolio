@@ -18,9 +18,14 @@ const Slider = () => {
 
 	const goTo = useCallback(
 		(i: number) => {
+			const stepPx = window.innerWidth > 640 ? 470 : 370
 			const index = Math.max(0, Math.min(slides.length - 1, i))
 			setActive(index)
-			animate(x, -index * 470, { type: 'spring', stiffness: 120, damping: 20 })
+			animate(x, -index * stepPx, {
+				type: 'spring',
+				stiffness: 120,
+				damping: 20,
+			})
 		},
 		[x]
 	)
@@ -48,9 +53,9 @@ const Slider = () => {
 	}, [active, isScrolling, goTo])
 
 	return (
-		<div>
-			<div className='relative mb-10 ml-75'>
-				<div className='absolute -left-30 top-0.5 flex items-center gap-2'>
+		<div className='ml-90 max-xl:ml-40 max-lg:ml-30 max-md:ml-15 max-sm:ml-5'>
+			<div className='relative mb-6 '>
+				<div className='absolute -left-30 top-0.5 flex items-center gap-2 max-md:hidden'>
 					<div
 						onClick={() => goTo(active - 1)}
 						className='bg-base light:bg-primary rotate-180 rounded-r-4xl rounded-l-md cursor-pointer'
@@ -64,12 +69,12 @@ const Slider = () => {
 						<Chevron />
 					</div>
 				</div>
-				<div className='text-4xl font-bold select-none tracking-[8px]'>
+				<div className='text-4xl font-bold select-none tracking-[8px] max-sm:tracing-[4px] max-sm:text-2xl'>
 					{t(slides[active].title)}
 				</div>
 			</div>
 			<div
-				className='relative w-full flex items-center justify-center select-none ml-110 mb-12'
+				className='relative w-full flex items-center justify-center select-none ml-80 mb-12 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
 				ref={containerRef}
 			>
 				<motion.div
@@ -80,7 +85,7 @@ const Slider = () => {
 					dragMomentum={false}
 					onDragEnd={() => {
 						const currentX = x.get()
-						const slideWidth = 450 + 20
+						const slideWidth = 450
 						const newIndex = Math.round(-currentX / slideWidth)
 						goTo(newIndex)
 					}}
@@ -97,7 +102,7 @@ const Slider = () => {
 								}}
 								animate={{ height }}
 								transition={{ duration: 0.15, ease: 'easeOut' }}
-								className='w-[450px] h-60 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab'
+								className='w-[450px] max-sm:w-[350px] h-60 max-sm:h-40 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab'
 								onPointerDown={() => setIsDragging(false)}
 								onPointerMove={() => setIsDragging(true)}
 								onPointerUp={() => {
@@ -115,13 +120,13 @@ const Slider = () => {
 					})}
 				</motion.div>
 			</div>
-			<div className='ml-75 max-w-[420px]'>
+			<div className='max-w-[420px]'>
 				<div className='text-xs h-22 select-none'>{t(slides[active].text)}</div>
 				<button
 					onClick={() => navigate(slides[active].link)}
 					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full select-none cursor-pointer'
 				>
-					Открыть страницу
+					{t('btnOpenPage')}
 				</button>
 			</div>
 		</div>

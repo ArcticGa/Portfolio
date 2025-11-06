@@ -14,11 +14,12 @@ export const translations = {
 		descArtist: 'Lorem ipsum dolor sit amet.',
 		descPortfolio:
 			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet consectetur ducimus excepturi? Tempora, deleniti reiciendis suscipit minus laboriosam unde deserunt.',
+		btnOpenPage: 'OPEN PAGE',
 	},
 	ru: {
 		about: 'ОБО МНЕ',
 		coding: 'КОДИНГ',
-		artistSkills: 'ARTIST НАВЫКИ',
+		artistSkills: 'АРТИСТИНГ',
 		portfolio: 'ПОРТФОЛИО',
 		name: 'АЛЕКСАНДР',
 		nickname: 'DEVALEX',
@@ -31,5 +32,6 @@ export const translations = {
 		descArtist: 'Lorem ipsum dolor sit amet.',
 		descPortfolio:
 			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet consectetur ducimus excepturi? Tempora, deleniti reiciendis suscipit minus laboriosam unde deserunt.',
+		btnOpenPage: 'ОТКРЫТЬ СТРАНИЦУ',
 	},
 } as const
