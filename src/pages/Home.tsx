@@ -19,7 +19,10 @@ const Home = () => {
 	}, [])
 
 	const handleScroll = (e: WheelEvent) => {
-		if (e.deltaY > 0) dispatch(setScene(1))
+		if (e.deltaY > 0) {
+			dispatch(setScene(1))
+			localStorage.setItem('scene', '1')
+		}
 	}
 
 	useEffect(() => {

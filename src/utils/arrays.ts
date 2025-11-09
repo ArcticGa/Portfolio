@@ -19,7 +19,7 @@ export const slides = [
 		id: 3,
 		img: '...',
 		link: '/artist',
-		title: 'artistSkills',
+		title: 'artist',
 		text: 'descArtist',
 	},
 	{

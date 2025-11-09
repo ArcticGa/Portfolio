@@ -10,13 +10,16 @@
 
 	--font-texts: 'Inter', sans-serif;
 
-	--spacing-container: 96px;
+	--spacing-container: 148px;
 	--spacing-container-xl: 72px;
 	--spacing-container-lg: 56px;
 	--spacing-container-sm: 32px;
+	--spacing-header-hight: 105px;
 
-	--color-background: #21202b;
+	--color-background: #16161d;
 	--color-backgroundWhite: #f4f1eb;
+	--color-backgroundPages: #101014;
+
 	--color-primary: #161528;
 	--color-base: #f4f1eb;
 	--color-gray: #c6c6c6;
@@ -49,7 +52,7 @@ html {
 header {
 	position: fixed;
 	width: 100%;
-	z-index: 50;
+	z-index: 30;
 	top: 0;
 	left: 0;
 	height: var(--header-hight);

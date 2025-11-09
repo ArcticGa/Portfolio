@@ -5,7 +5,7 @@ interface IScenesSlice {
 }
 
 const initialState: IScenesSlice = {
-	scene: 0,
+	scene: Number(localStorage.getItem('scene')) || 0,
 }
 
 export const scenesSlice = createSlice({

@@ -2,8 +2,9 @@ export const translations = {
 	en: {
 		about: 'ABOUT',
 		coding: 'CODING',
-		artistSkills: 'ARTIST SKILLS',
+		artist: 'ARTIST SKILLS',
 		portfolio: 'PORTFOLIO',
+		backHomeBtn: 'BACK TO HOME',
 		name: 'ALEXANDER',
 		nickname: 'DEVALEX',
 		welcome: `Welcome to my portfolio! I'm Alexander, a web developer specializing in Front-End and digital artist specializing in 3D Artist & Concept Artist, I'll share a glimpse into my work and what I love to do.`,
@@ -19,8 +20,9 @@ export const translations = {
 	ru: {
 		about: 'ОБО МНЕ',
 		coding: 'КОДИНГ',
-		artistSkills: 'АРТИСТИНГ',
+		artist: 'АРТИСТИНГ',
 		portfolio: 'ПОРТФОЛИО',
+		backHomeBtn: 'ВЕРНУТЬСЯ НА ГЛАВНУЮ',
 		name: 'АЛЕКСАНДР',
 		nickname: 'DEVALEX',
 		welcome:

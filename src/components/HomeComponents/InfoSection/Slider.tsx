@@ -2,11 +2,15 @@ import { animate, motion, useMotionValue } from 'framer-motion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useTranslate } from '../../../hooks/useTranslate'
+import { setSlide } from '../../../redux/slices/sliderSlice'
+import { useAppDispatch, useAppSelector } from '../../../redux/store'
 import { slides } from '../../../utils/arrays'
 import Chevron from '../../svgs/Chevron'
 
 const Slider = () => {
-	const [active, setActive] = useState(0)
+	const dispatch = useAppDispatch()
+	const { activeSlide } = useAppSelector(state => state.sliderSlice)
+
 	const [isDragging, setIsDragging] = useState(false)
 	const [isScrolling, setIsScrolling] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
@@ -20,7 +24,7 @@ const Slider = () => {
 		(i: number) => {
 			const stepPx = window.innerWidth > 640 ? 470 : 370
 			const index = Math.max(0, Math.min(slides.length - 1, i))
-			setActive(index)
+			dispatch(setSlide(index))
 			animate(x, -index * stepPx, {
 				type: 'spring',
 				stiffness: 120,
@@ -31,6 +35,10 @@ const Slider = () => {
 	)
 
 	useEffect(() => {
+		goTo(activeSlide)
+	}, [])
+
+	useEffect(() => {
 		const container = containerRef.current
 		if (!container) return
 
@@ -39,8 +47,8 @@ const Slider = () => {
 			if (isScrolling) return
 			setIsScrolling(true)
 
-			if (e.deltaY > 0) goTo(active + 1)
-			else goTo(active - 1)
+			if (e.deltaY > 0) goTo(activeSlide + 1)
+			else goTo(activeSlide - 1)
 
 			setTimeout(() => setIsScrolling(false), 300)
 		}
@@ -50,31 +58,31 @@ const Slider = () => {
 		return () => {
 			container.removeEventListener('wheel', handleWheel)
 		}
-	}, [active, isScrolling, goTo])
+	}, [activeSlide, isScrolling, goTo])
 
 	return (
 		<div className='ml-90 max-xl:ml-40 max-lg:ml-30 max-md:ml-15 max-sm:ml-5'>
 			<div className='relative mb-6 '>
 				<div className='absolute -left-30 top-0.5 flex items-center gap-2 max-md:hidden'>
 					<div
-						onClick={() => goTo(active - 1)}
+						onClick={() => goTo(activeSlide - 1)}
 						className='bg-base light:bg-primary rotate-180 rounded-r-4xl rounded-l-md cursor-pointer'
 					>
 						<Chevron />
 					</div>
 					<div
-						onClick={() => goTo(active + 1)}
+						onClick={() => goTo(activeSlide + 1)}
 						className='bg-base light:bg-primary rounded-r-4xl rounded-l-md cursor-pointer'
 					>
 						<Chevron />
 					</div>
 				</div>
 				<div className='text-4xl font-bold select-none tracking-[8px] max-sm:tracing-[4px] max-sm:text-2xl'>
-					{t(slides[active].title)}
+					{t(slides[activeSlide].title)}
 				</div>
 			</div>
 			<div
-				className='relative w-full flex items-center justify-center select-none ml-80 mb-12 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
+				className='relative w-full flex items-center justify-center select-none ml-70 mb-12 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
 				ref={containerRef}
 			>
 				<motion.div
@@ -91,7 +99,7 @@ const Slider = () => {
 					}}
 				>
 					{slides.map((slide, i) => {
-						const isActive = i === active
+						const isActive = i === activeSlide
 						const height = isActive ? 265 : 215
 
 						return (
@@ -121,9 +129,11 @@ const Slider = () => {
 				</motion.div>
 			</div>
 			<div className='max-w-[420px]'>
-				<div className='text-xs h-22 select-none'>{t(slides[active].text)}</div>
+				<div className='text-xs h-22 select-none'>
+					{t(slides[activeSlide].text)}
+				</div>
 				<button
-					onClick={() => navigate(slides[active].link)}
+					onClick={() => navigate(slides[activeSlide].link)}
 					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full select-none cursor-pointer'
 				>
 					{t('btnOpenPage')}

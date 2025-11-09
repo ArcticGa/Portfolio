@@ -2,7 +2,7 @@ import Slider from './Slider'
 
 const InfoSection = () => {
 	return (
-		<div className='pt-30 max-sm:pt-6'>
+		<div className='pt-45 max-sm:pt-6'>
 			<Slider />
 		</div>
 	)

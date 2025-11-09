@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useRef } from 'react'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { useTranslate } from '../../../hooks/useTranslate'
 import { setSidebar } from '../../../redux/slices/headerSlice'
 import { setScene } from '../../../redux/slices/scenesSlice'
@@ -16,6 +16,7 @@ const Header = () => {
 	const prevSceneRef = useRef(scene)
 
 	const navigate = useNavigate()
+	const { pathname } = useLocation()
 	const t = useTranslate()
 
 	const navVariants: Variants = {
@@ -63,11 +64,17 @@ const Header = () => {
 		navigate('/')
 		if (scene === 1) {
 			dispatch(setScene(0))
+			localStorage.setItem('scene', '0')
 		}
 	}
 
+	const handleCloseFromSidebar = () => {
+		dispatch(setSidebar(false))
+		navigate('/')
+	}
+
 	return (
-		<header className='flex items-center justify-between px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm bg-background light:bg-base'>
+		<header className='flex items-center justify-between px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm bg-transparent'>
 			<div
 				onClick={handleBackHome}
 				className='flex items-center gap-5 h-10 cursor-pointer'
@@ -109,7 +116,7 @@ const Header = () => {
 								>
 									<path d='M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z' />
 								</svg>
-								<span className='max-md:hidden'>ВЕРНУТЬСЯ НА ГЛАВНУЮ</span>
+								<span className='max-md:hidden'>{t('backHomeBtn')}</span>
 							</div>
 						</motion.div>
 					)}
@@ -167,7 +174,7 @@ const Header = () => {
 						variants={navVariants}
 					>
 						<ul className='flex flex-col gap-12 text-3xl font-extrabold text-center'>
-							{(['about', 'coding', 'artistSkills', 'portfolio'] as const).map(
+							{(['about', 'coding', 'artist', 'portfolio'] as const).map(
 								(item, i) => (
 									<motion.div
 										key={item}
@@ -179,6 +186,15 @@ const Header = () => {
 										<NavItem linkTo={`/${item}`}>{t(item)}</NavItem>
 									</motion.div>
 								)
+							)}
+
+							{pathname !== '/' && (
+								<li
+									onClick={handleCloseFromSidebar}
+									className='text-xl text-base light:text-primary bg-primary light:bg-base px-6 py-3 rounded-full'
+								>
+									Вернуться
+								</li>
 							)}
 						</ul>
 					</motion.nav>
