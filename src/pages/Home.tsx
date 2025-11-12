@@ -2,6 +2,7 @@ import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import InfoSection from '../components/HomeComponents/InfoSection/InfoSection'
 import MainSection from '../components/HomeComponents/MainSection/MainSection'
+import Particles from '../reactbits/Particles'
 import { setScene } from '../redux/slices/scenesSlice'
 import { useAppDispatch, useAppSelector } from '../redux/store'
 
@@ -52,6 +53,18 @@ const Home = () => {
 
 	return (
 		<main>
+			<div className='absolute top-0 left-0 w-full h-screen select-none pointer-events-none'>
+				<Particles
+					particleColors={['#7e00e6']}
+					particleCount={600}
+					particleSpread={10}
+					speed={0.1}
+					particleBaseSize={50}
+					alphaParticles={false}
+					disableRotation={false}
+				/>
+			</div>
+
 			<div className='px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm'>
 				<AnimatePresence mode='wait' custom={direction}>
 					{scene === 0 && (

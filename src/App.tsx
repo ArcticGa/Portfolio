@@ -2,6 +2,7 @@ import { useGLTF, useTexture } from '@react-three/drei'
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
+import CursorGlow from './components/BaseComponents/CursorGlow'
 import PaddingBlock from './components/BaseComponents/PaddingsBlock'
 import SmoothScroll from './components/BaseComponents/SmoothScroll'
 import Header from './components/HomeComponents/Header/Header'
@@ -42,6 +43,8 @@ const App = () => {
 		setShowIntro(false)
 	}
 
+	const showCursorGlow = location.pathname !== '/'
+
 	return (
 		<SmoothScroll>
 			<div className='relative min-h-screen overflow-hidden bg-background light:bg-base text-base light:text-primary'>
@@ -57,6 +60,7 @@ const App = () => {
 						</motion.div>
 					) : (
 						<>
+							{showCursorGlow && <CursorGlow />}
 							<Header />
 							<Routes location={location} key={location.pathname}>
 								<Route path='/' element={<Home />} />

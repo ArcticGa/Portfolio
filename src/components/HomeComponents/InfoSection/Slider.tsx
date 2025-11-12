@@ -110,7 +110,7 @@ const Slider = () => {
 								}}
 								animate={{ height }}
 								transition={{ duration: 0.15, ease: 'easeOut' }}
-								className='w-[450px] max-sm:w-[350px] h-60 max-sm:h-40 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab'
+								className='w-[450px] max-sm:w-[350px] h-60 max-sm:h-40 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab light:border-[#3a2f4f] light:bg-black/15'
 								onPointerDown={() => setIsDragging(false)}
 								onPointerMove={() => setIsDragging(true)}
 								onPointerUp={() => {
@@ -129,12 +129,12 @@ const Slider = () => {
 				</motion.div>
 			</div>
 			<div className='max-w-[420px]'>
-				<div className='text-xs h-22 select-none'>
+				<div className='text-sm h-22 select-none'>
 					{t(slides[activeSlide].text)}
 				</div>
 				<button
 					onClick={() => navigate(slides[activeSlide].link)}
-					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full select-none cursor-pointer'
+					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full cursor-pointer'
 				>
 					{t('btnOpenPage')}
 				</button>

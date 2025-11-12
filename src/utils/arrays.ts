@@ -3,7 +3,7 @@ export const skillsList = ['Developer', 'Artist']
 export const slides = [
 	{
 		id: 1,
-		img: '...',
+		img: '/public/images/bgAbout.png',
 		link: '/about',
 		title: 'about',
 		text: 'descAbout',

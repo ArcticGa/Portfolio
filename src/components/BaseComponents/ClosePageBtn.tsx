@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router'
+import { useTranslate } from '../../hooks/useTranslate'
 import { useAppSelector } from '../../redux/store'
 
 const ClosePageBtn = () => {
 	const { theme } = useAppSelector(state => state.headerSlice)
 	const navigate = useNavigate()
+	const t = useTranslate()
 
 	return (
 		<div
 			onClick={() => navigate('/')}
-			className='fixed bg-base light:bg-primary text-primary light:text-base px-3 font-bold h-10 text-center top-8 rounded-full left-[44%] max-lg:left-[47%] z-30 flex items-center cursor-pointer max-md:hidden'
+			className=' fixed bg-base w-[210px] light:bg-primary text-primary light:text-base px-3 font-bold h-10 text-center top-8 rounded-full left-[44%] max-lg:left-[47%] z-30 flex items-center justify-center cursor-pointer max-md:hidden'
 		>
 			<div className='pr-3'>
 				<svg
@@ -25,7 +27,7 @@ const ClosePageBtn = () => {
 					/>
 				</svg>
 			</div>
-			<div>Закрыть страницу</div>
+			<div>{t('btnClosePage')}</div>
 		</div>
 	)
 }
