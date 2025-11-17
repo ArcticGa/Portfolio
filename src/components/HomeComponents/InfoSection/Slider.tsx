@@ -134,7 +134,7 @@ const Slider = () => {
 				</div>
 				<button
 					onClick={() => navigate(slides[activeSlide].link)}
-					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full cursor-pointer'
+					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full cursor-pointer select-none'
 				>
 					{t('btnOpenPage')}
 				</button>

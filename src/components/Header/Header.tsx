@@ -1,10 +1,10 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import { useTranslate } from '../../../hooks/useTranslate'
-import { setSidebar } from '../../../redux/slices/headerSlice'
-import { setScene } from '../../../redux/slices/scenesSlice'
-import { useAppDispatch, useAppSelector } from '../../../redux/store'
+import { useTranslate } from '../../hooks/useTranslate'
+import { setSidebar } from '../../redux/slices/headerSlice'
+import { setScene } from '../../redux/slices/scenesSlice'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
 import ChangeLangBtn from './ChangeLangBtn'
 import ChangeThemeBtn from './ChangeThemeBtn'
 import NavItem from './NavItem'
@@ -193,7 +193,7 @@ const Header = () => {
 									onClick={handleCloseFromSidebar}
 									className='text-xl text-base light:text-primary bg-primary light:bg-base px-6 py-3 rounded-full'
 								>
-									Вернуться
+									{t('btnBack')}
 								</li>
 							)}
 						</ul>

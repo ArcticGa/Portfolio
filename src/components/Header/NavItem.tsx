@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { type ReactNode } from 'react'
 import { Link } from 'react-router'
-import { setSidebar } from '../../../redux/slices/headerSlice'
-import { useAppDispatch } from '../../../redux/store'
+import { setSidebar } from '../../redux/slices/headerSlice'
+import { useAppDispatch } from '../../redux/store'
 
 const NavItem = ({
 	linkTo,

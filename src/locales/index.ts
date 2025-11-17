@@ -7,13 +7,14 @@ export const translations = {
 		portfolio: 'PORTFOLIO',
 		backHomeBtn: 'BACK TO HOME',
 		btnClosePage: 'Close page',
+		btnBack: 'Return',
 
 		// Home page -> scene1 -> Text
 		name: 'ALEXANDER',
 		nickname: 'DEVALEX',
 		welcome: `Welcome to my portfolio! I'm Alexander, a web developer specializing in Front-End and digital artist specializing in 3D Artist & Concept Artist, I'll share a glimpse into my work and what I love to do.`,
 
-		// Home Page -> scene2 -> Titles
+		// Home Page -> scene2 -> Descriptions
 		descAbout:
 			'A little fragment of me and my world, to give you a precise idea of what I do.',
 		descCoding:
@@ -30,6 +31,12 @@ export const translations = {
 			'If you are interested in learning more about me, you can contact me via Telegram, Discord, or GitHub',
 		discordCopyText: 'Discord Id copied successfully!',
 
+		// Skill levels
+		basic: 'Basic',
+		intermediate: 'Intermediate',
+		experienced: 'Experienced',
+		high: 'High',
+
 		// About Page
 		aboutStartText: 'Coding and Art are a completely different world.',
 		aboutTitle: 'Who I am',
@@ -42,12 +49,45 @@ export const translations = {
 		labelArtistCard: 'Artist Skills & Design',
 		labelPortfolioCard: 'Portfolio',
 		descriptionCodingCard:
-			'Frontend & backend development with focus on performance.',
+			'Front-End development with a focus on performance and design.',
 		descriptionArtistCard:
 			'Creative concept design, 3D art and digital illustration.',
 		descriptionPortfolioCard:
 			'A collection of my professional works and personal projects.',
 		aboutCardBtn: 'Visit',
+
+		// Coding Page
+		codingStartText: 'Write code for people, not machines.',
+		codingTitle: 'CODING',
+		codingDescription: 'Coding is my main job.',
+
+		codingTitleMainSection: 'The art of building the web.',
+
+		codingMainInfoBlockTitle: 'FROM IDEAS TO CODE',
+		codingMainInfoBlockSecondTitle: 'My method',
+		codingMainInfoBlockText:
+			'Everything starts with an idea, an experience for those who visit my space on the web. The user must be surprised, engaged, involved! To create something unique and special, I bring my design to life with the latest development technologies, choosing the ones best suited to the project.',
+
+		codingTechnologiesSecondTitle: 'My Technologies',
+
+		codingFrontEndTitle: 'FRONTEND',
+		codingFrontEndSecondTitle: 'Code & Design',
+		codingFrontEndText:
+			'FrontEnd is what the user sees and interacts with. My goal is to deliver the best user experience by applying personal skills, new technologies, and modern approaches. I also aim to contribute value in team development by writing clean and high-quality code.',
+
+		codingReactTitle: 'React & Next',
+		codingReactText:
+			'React is the foundation I use in 90% of my projects, along with TypeScript as an enhancement on top of vanilla JS for more flexible and high-quality development. Currently, I`m actively learning and making the transition to NextJs.',
+		codingAdviceStickers: 'Drag and drop stickers as you wish.',
+
+		codingBackEndTitle: 'BACKEND',
+		codingBackEndSecondTitle: 'The Heart of an Web App',
+		codingBackEndText:
+			'FrontEnd represents the visual face of a site, while Backend serves as its hidden driving force. My primary specialization is FrontEnd development, but I also possess foundational knowledge in BackEnd.',
+
+		codingDBsTitle: 'NodeJs & MongoDB & PostgresQL',
+		codingDBsText:
+			'In my backend development work, I primarily use Node.js following the MVC architecture. I also have experience with MongoDB (via mongoose) and PostgreSQL. I’m familiar with configuring CORS, implementing password encryption, developing request-handling logic, and building REST APIs. I have a solid foundational understanding of backend development and how it interacts with the frontend layer of an application.',
 	},
 	ru: {
 		// Navigation and Slider Titles
@@ -57,6 +97,7 @@ export const translations = {
 		portfolio: 'ПОРТФОЛИО',
 		backHomeBtn: 'ВЕРНУТЬСЯ НА ГЛАВНУЮ',
 		btnClosePage: 'Закрыть страницу',
+		btnBack: 'Вернуться',
 
 		// Home page -> scene1 -> Text
 		name: 'АЛЕКСАНДР',
@@ -64,7 +105,7 @@ export const translations = {
 		welcome:
 			'Добро пожаловать в моё портфолио! Меня зовут Александр, я Web Developer в направлении Front-End разработки и цифровой художник в направлениях 3D-Artist & Concept Artist. Здесь я расскажу о своей работе и о том, что мне нравится делать',
 
-		// Home Page -> scene2 -> Titles
+		// Home Page -> scene2 -> Descriptions
 		descAbout:
 			'Маленький фрагмент меня и моего мира, чтобы дать вам точное представление о том, чем я занимаюсь.',
 		descCoding:
@@ -81,6 +122,12 @@ export const translations = {
 			'Если вам интересно узнать обо мне больше, вы можете связаться со мной через телеграмм, дискорд, или GitHub',
 		discordCopyText: 'Discord Id успешно скопирован!',
 
+		// Skill levels
+		basic: 'Базовый',
+		intermediate: 'Средний',
+		experienced: 'Опытный',
+		high: 'Высокий',
+
 		// About Page
 		aboutStartText: 'Программирование и искусство это совсем другой мир',
 		aboutTitle: 'Who I am',
@@ -94,11 +141,44 @@ export const translations = {
 		labelArtistCard: 'Дизайн',
 		labelPortfolioCard: 'Портфолио',
 		descriptionCodingCard:
-			'Разработка Front-End и Back-End с упором на производительность.',
+			'Разработка Front-End с упором на производительность и дизайн.',
 		descriptionArtistCard:
 			'Креативный концептуальный дизайн, Anime-арты, 3D-арты и цифровая иллюстрация.',
 		descriptionPortfolioCard:
 			'Коллекция моих профессиональных работ и личных проектов.',
 		aboutCardBtn: 'Перейти',
+
+		// Coding Page
+		codingStartText: 'Пишу код для людей, не для машин.',
+		codingTitle: 'КОДИНГ',
+		codingDescription: 'Кодинг - моя основная работа',
+
+		codingTitleMainSection: 'Искусство создания сети.',
+
+		codingMainInfoBlockTitle: 'ОТ ИДЕЙ ДО КОДА',
+		codingMainInfoBlockSecondTitle: 'Мой метод',
+		codingMainInfoBlockText:
+			'Всё начинается с идеи, с впечатления для тех, кто посещает моё пространство в сети. Пользователь должен быть удивлён, вовлечён, заинтересован! Чтобы создать нечто уникальное и особенное, я воплощаю свой дизайн в жизнь с помощью новейших технологий разработки, выбирая те, что лучше всего подходят для проекта.',
+
+		codingTechnologiesSecondTitle: 'Мои Технологии',
+
+		codingFrontEndTitle: 'FRONTEND',
+		codingFrontEndSecondTitle: 'Код & Дизайн',
+		codingFrontEndText:
+			'FrontEnd — это то, что пользователь видит и с чем взаимодействует. Моя задача — обеспечивать лучший пользовательский опыт, применяя личные навыки, новые технологии и современные подходы. А также приносить пользу в командной разработке, создавая читаемый и качественный код.',
+
+		codingReactTitle: 'React & Next',
+		codingReactText:
+			'React - это основа, которую я использую в 90% проектов. А также TypeScript как накрутка на базовый JS для более гибкой и качественной разработки. Сейчас я активно изучаю и перехожу на NextJs.',
+		codingAdviceStickers: 'Перетаскивайте стикеры как хотите',
+
+		codingBackEndTitle: 'BACKEND',
+		codingBackEndSecondTitle: 'Сердце Web приложения',
+		codingBackEndText:
+			'FrontEnd представляет собой внешний облик сайта, в то время как Backend является его скрытой движущей силой. Моя основная специализация — FrontEnd-разработка, но я также обладаю базовыми знаниями в области BackEnd.',
+
+		codingDBsTitle: 'NodeJs & MongoDB & PostgresQL',
+		codingDBsText:
+			'В основном при разработке backend-части я работаю с Node.js, используя архитектуру MVC. Также имею опыт работы с базами данных MongoDB (через mongoose) и PostgreSQL. Хорошо знаком с настройкой CORS, шифрованием паролей, разработкой логики обработки запросов и построением REST API. Backend понимаю на уверенном базовом уровне и знаю, как он взаимодействует с frontend-частью приложения.',
 	},
 } as const

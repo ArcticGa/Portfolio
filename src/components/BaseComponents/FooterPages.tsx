@@ -4,8 +4,9 @@ import { useTranslate } from '../../hooks/useTranslate'
 import Discord from '../svgs/Discord'
 import GitHub from '../svgs/GitHub'
 import Telegram from '../svgs/Telegram'
+import X from '../svgs/X'
 
-const Ballpit = lazy(() => import('../../reactbits/BallPit'))
+const Ballpit = lazy(() => import('../../reactbits/Ballpit'))
 
 const fadeUpVariant: Variants = {
 	hidden: { opacity: 0, y: 50 },
@@ -69,6 +70,9 @@ const FooterPages = () => {
 							</a>
 							<a href='https://github.com/ArcticGa' target='_blank'>
 								<GitHub />
+							</a>
+							<a href='https://x.com/monkergeAlex' target='_blank'>
+								<X />
 							</a>
 							<div
 								onClick={() => handleCopy('arcticru1')}
