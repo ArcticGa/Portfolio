@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import CursorGlow from './components/BaseComponents/CursorGlow'
 import PaddingBlock from './components/BaseComponents/PaddingsBlock'
+import ScrollToTop from './components/BaseComponents/ScrollToTop'
 import SmoothScroll from './components/BaseComponents/SmoothScroll'
 import Header from './components/Header/Header'
 import IntroScreen from './components/IntroScreen/IntroScreen'
@@ -27,6 +28,7 @@ const App = () => {
 	const location = useLocation()
 
 	useGLTF.preload('/public/models/nina.glb')
+	useGLTF.preload('/public/models/axolotl.glb')
 	useTexture.preload('/public/hdr/venice_sunset_1k.hdr')
 
 	useEffect(() => {
@@ -47,6 +49,7 @@ const App = () => {
 
 	return (
 		<SmoothScroll>
+			<ScrollToTop />
 			<div className='relative min-h-screen overflow-hidden bg-background light:bg-base text-base light:text-primary'>
 				<AnimatePresence mode='wait'>
 					{showIntro ? (
@@ -124,26 +127,7 @@ const App = () => {
 										</motion.div>
 									}
 								/>
-								<Route
-									path='/portfolio'
-									element={
-										<motion.div
-											initial='initial'
-											animate='animate'
-											exit='exit'
-											variants={pageVariants}
-											transition={{
-												type: 'tween',
-												ease: 'easeInOut',
-												duration: 0.5,
-											}}
-										>
-											<PaddingBlock>
-												<Portfolio />
-											</PaddingBlock>
-										</motion.div>
-									}
-								/>
+								<Route path='/portfolio' element={<Portfolio />} />
 							</Routes>
 						</>
 					)}

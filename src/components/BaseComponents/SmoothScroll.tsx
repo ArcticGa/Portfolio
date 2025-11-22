@@ -1,21 +1,13 @@
-import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
+import { lenis } from '../../lib/lenis'
 
 interface SmoothScrollProps {
 	children: ReactNode
 }
 
 const SmoothScroll = ({ children }: SmoothScrollProps) => {
-	const scrollRef = useRef<HTMLDivElement>(null)
-
 	useEffect(() => {
-		if (!scrollRef.current) return
-
-		const lenis = new Lenis({
-			lerp: 0.08,
-		})
-
 		const onFrame = (time: number) => {
 			lenis.raf(time)
 			requestAnimationFrame(onFrame)
@@ -28,7 +20,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
 		}
 	}, [])
 
-	return <div ref={scrollRef}>{children}</div>
+	return <>{children}</>
 }
 
 export default SmoothScroll

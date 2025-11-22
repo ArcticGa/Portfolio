@@ -28,7 +28,7 @@ export const translations = {
 		// Footer Component
 		footerTitle: 'Contact',
 		footerDescription:
-			'If you are interested in learning more about me, you can contact me via Telegram, Discord, or GitHub',
+			'If you are interested in learning more about me, you can contact me in Telegram, Discord, X(Twitter) or GitHub',
 		discordCopyText: 'Discord Id copied successfully!',
 
 		// Skill levels
@@ -88,6 +88,27 @@ export const translations = {
 		codingDBsTitle: 'NodeJs & MongoDB & PostgresQL',
 		codingDBsText:
 			'In my backend development work, I primarily use Node.js following the MVC architecture. I also have experience with MongoDB (via mongoose) and PostgreSQL. I’m familiar with configuring CORS, implementing password encryption, developing request-handling logic, and building REST APIs. I have a solid foundational understanding of backend development and how it interacts with the frontend layer of an application.',
+
+		// Artist Page
+		artistStartText:
+			'“Art washes away the soul with the dust of everyday life”',
+		artistTitle: 'ARTISTING',
+		artistDescription: 'Discover my design corner',
+
+		artistMainInfoTitle: 'DRAWING & DESIGN',
+		artistMainInfoSecondTitle: 'Introduction',
+		artistMainInfoText:
+			'Welcome to my creative space! My journey into the world of design began not long ago, and since then, I have fully immersed myself in mastering digital illustration—from creating initial sketches to animated GIF compositions. Each project is a new step in my growth, and I am dedicated to continuously improving my skills. My portfolio is currently being updated with new work, so please check back soon. Thank you for stopping by 😀',
+
+		artistToolsSecondTitle: 'Tools',
+
+		artistShowCaseTitle: 'Showcase',
+		artistShowCaseText: 'Coming soon...',
+
+		artist3DTitle: '3D Modeling',
+		artist3DSecondTitle: 'Simple but impactful',
+		artist3DText:
+			'With a 3D model, you can create a dramatic visual impact, even with just a few polygons! Especially on the web, where a site`s performance is essential, it`s possible to create captivating 3D experiences that engage the user without sacrificing efficiency.',
 	},
 	ru: {
 		// Navigation and Slider Titles
@@ -180,5 +201,25 @@ export const translations = {
 		codingDBsTitle: 'NodeJs & MongoDB & PostgresQL',
 		codingDBsText:
 			'В основном при разработке backend-части я работаю с Node.js, используя архитектуру MVC. Также имею опыт работы с базами данных MongoDB (через mongoose) и PostgreSQL. Хорошо знаком с настройкой CORS, шифрованием паролей, разработкой логики обработки запросов и построением REST API. Backend понимаю на уверенном базовом уровне и знаю, как он взаимодействует с frontend-частью приложения.',
+
+		// Artist Page
+		artistStartText: '“Искусство смывает с души пыль повседневной жизни”',
+		artistTitle: 'ARTISTING',
+		artistDescription: 'Откройте для себя мой уголок дизайна',
+
+		artistMainInfoTitle: 'Рисование & Дизайн',
+		artistMainInfoSecondTitle: 'Введение',
+		artistMainInfoText:
+			'Добро пожаловать в моё творческое пространство! Моё путешествие в мир дизайна началось не так давно, и с тех пор я полностью погрузился в процесс освоения цифровой иллюстрации — от создания первых набросков до анимированных GIF-композиций. Каждый проект для меня — это новый шаг в развитии, и я целенаправленно работаю над совершенствованием своего мастерства. В данный момент портфолио находится в процессе наполнения, и вскоре здесь появятся новые работы. Спасибо, что заглянули 😀',
+
+		artistToolsSecondTitle: 'Инструменты',
+
+		artistShowCaseTitle: 'Проекты',
+		artistShowCaseText: 'Появятся позже...',
+
+		artist3DTitle: '3D Моделирование',
+		artist3DSecondTitle: 'Просто, но эффективно',
+		artist3DText:
+			'С помощью 3D-модели можно создать впечатляющий визуальный эффект, даже используя всего несколько полигонов! Особенно в интернете, где производительность сайта имеет решающее значение, можно создавать захватывающие 3D-впечатления, которые увлекают пользователя, не жертвуя эффективностью.',
 	},
 } as const

@@ -61,7 +61,7 @@ const About = () => {
 					glowColor='132, 0, 255'
 				/>
 
-				<hr className='absolute left-[48%] -bottom-30 w-16 h-0.5 bg-[#3b3b3b] text-[#3b3b3b] rotate-90 max-md:hidden' />
+				<hr className='absolute left-[48%] -bottom-30 w-16 h-0.5 bg-hr-info text-hr-info rotate-90 max-md:hidden' />
 			</motion.div>
 
 			<FooterPages />

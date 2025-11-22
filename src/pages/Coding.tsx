@@ -60,7 +60,7 @@ const Coding = () => {
 				{devSkills.map((skill, i) => (
 					<SpotlightCard key={i} className='flex flex-col justify-center'>
 						<div className='text-xl font-bold mb-2'>{skill.name}</div>
-						<div className='text-[#bcbcbc] light:text-[#595959]'>
+						<div className='text-skill-dark light:text-skill-light'>
 							{t(skill.level)}
 						</div>
 					</SpotlightCard>
@@ -98,7 +98,7 @@ const Coding = () => {
 					/>
 				))}
 
-				<div className='absolute bottom-5 left-[40.5%] text-[#5e5e5e] max-sm:left-1/13'>
+				<div className='absolute bottom-5 left-[40.5%] text-skill-dark light:text-skill-light max-sm:left-1/13'>
 					{t('codingAdviceStickers')}
 				</div>
 			</motion.div>

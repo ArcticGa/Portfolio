@@ -647,9 +647,9 @@ const MagicBento: React.FC<BentoProps> = ({
 							</div>
 							<div
 								onClick={() => navigate(`/${card.title}`)}
-								className='text-center border border-[#3a2f4f] px-6 py-1 rounded-xl hover:bg-[#3a2f4f5d] cursor-pointer select-none bg-opacity-25 text-lg font-bold'
+								className='text-center border border-border-ballpit px-6 py-1 rounded-xl hover:bg-[#3a2f4f5d] cursor-pointer select-none bg-opacity-25 text-lg font-bold'
 							>
-								Перейти
+								{t('aboutCardBtn')}
 							</div>
 						</ParticleCard>
 					)

@@ -10,9 +10,9 @@ export const skillsList = [
 	'Developer',
 	'Artist',
 	'3D',
+	'Design',
 	'React',
 	'Next',
-	'Anime Style',
 ]
 
 export const slides = [
@@ -32,14 +32,14 @@ export const slides = [
 	},
 	{
 		id: 3,
-		img: '...',
+		img: '/public/images/bgArtist.png',
 		link: '/artist',
 		title: 'artist',
 		text: 'descArtist',
 	},
 	{
 		id: 4,
-		img: '...',
+		img: '/public/images/bgPortfolio.jpg',
 		link: '/portfolio',
 		title: 'portfolio',
 		text: 'descPortfolio',
@@ -146,3 +146,5 @@ export const stickersArray = [
 		y: 300,
 	},
 ]
+
+export const navPortfolioItems = []

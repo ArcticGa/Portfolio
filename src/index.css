@@ -19,10 +19,18 @@
 	--color-background: #05000d;
 	--color-backgroundWhite: #f4f1eb;
 	--color-backgroundPages: #05000d;
+	--color-backgroundFooter: #080015;
+	--color-backgroundMainPages: #0d0d0d;
 
 	--color-primary: #161528;
 	--color-base: #f4f1eb;
 	--color-gray: #c6c6c6;
+	--color-skill-dark: #bcbcbc;
+	--color-skill-light: #595959;
+	--color-hr-info: #3a3a3a;
+	--color-border-ballpit: #3a2f4f;
+	--color-notification: #29007b;
+	--color-link: #ab79fd;
 }
 
 @layer utilities {
