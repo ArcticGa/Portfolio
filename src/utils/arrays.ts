@@ -147,4 +147,26 @@ export const stickersArray = [
 	},
 ]
 
-export const navPortfolioItems = []
+export const navPortfolioItems = ['Web', 'Design', '3D'] as const
+
+export const portfolioWorks = {
+	web: {
+		name: 'Web',
+		works: [
+			{
+				img: '/public/images/gamesWorldImg.png',
+				name: 'Games World',
+			},
+		],
+	},
+	design: {
+		name: 'Design',
+		works: [],
+	},
+	modelling: {
+		name: '3D',
+		works: [],
+	},
+}
+
+export type PortfolioKey = keyof typeof portfolioWorks

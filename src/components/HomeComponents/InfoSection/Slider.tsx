@@ -110,7 +110,7 @@ const Slider = () => {
 								}}
 								animate={{ height }}
 								transition={{ duration: 0.15, ease: 'easeOut' }}
-								className='w-[450px] max-sm:w-[350px] h-60 max-sm:h-40 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab light:border-border-ballpit] light:bg-black/15'
+								className='w-[450px] max-sm:w-[350px] h-60 max-sm:h-40 rounded-2xl overflow-hidden border border-white/30 bg-white/5 cursor-grab light:border-border-ballpit light:bg-black/15'
 								onPointerDown={() => setIsDragging(false)}
 								onPointerMove={() => setIsDragging(true)}
 								onPointerUp={() => {
