@@ -2,6 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import ClosePageBtn from '../components/BaseComponents/ClosePageBtn'
 import PortfolioNav from '../components/BaseComponents/PortfolioNav'
+import Close from '../components/svgs/Close'
+import GitHubMini from '../components/svgs/GitHubMini'
+import Octicon from '../components/svgs/Octicon'
+import { useTranslate } from '../hooks/useTranslate'
 import { portfolioWorks, type PortfolioKey } from '../utils/arrays'
 
 const Portfolio = () => {
@@ -9,6 +13,10 @@ const Portfolio = () => {
 	const [openedWork, setOpenedWork] = useState<
 		null | (typeof selected.works)[0]
 	>(null)
+
+	const t = useTranslate()
+
+	console.log(works)
 
 	const selected = portfolioWorks[works]
 
@@ -29,6 +37,10 @@ const Portfolio = () => {
 						>
 							<div className='w-full h-2 bg-[#8670c4] rounded-full mb-6' />
 							<div className='flex gap-4'>
+								{!selected.works.length && (
+									<div className='text-xl'>{t('artistShowCaseText')}</div>
+								)}
+
 								{selected.works.map((work, index) => (
 									<motion.div
 										key={index}
@@ -78,14 +90,14 @@ const Portfolio = () => {
 								onClick={() => setOpenedWork(null)}
 							>
 								<motion.div
-									className='p-6 rounded-2xl max-w-[1500px] w-full flex gap-6 relative'
+									className='rounded-2xl max-w-[1500px] w-full flex justify-between gap-4 relative'
 									initial={{ scale: 0.9, opacity: 0 }}
 									animate={{ scale: 1, opacity: 1 }}
 									exit={{ scale: 0.9, opacity: 0 }}
 									transition={{ duration: 0.3, ease: 'easeOut' }}
 									onClick={e => e.stopPropagation()}
 								>
-									<div className='w-2/3 rounded-xl overflow-hidden'>
+									<div className='w-3/4 rounded-xl overflow-hidden'>
 										<img
 											src={openedWork.img}
 											alt={openedWork.name}
@@ -93,22 +105,53 @@ const Portfolio = () => {
 										/>
 									</div>
 
-									<div className='bg-[#231d33] rounded-xl p-4 w-1/3 flex flex-col justify-between'>
-										<div>
-											<div className='text-4xl font-bold mb-4'>
+									<div className='bg-[#0000007a] light:bg-base/80 border border-border-ballpit rounded-xl p-6 w-1/4 flex flex-col justify-between'>
+										<div className='flex flex-col h-full'>
+											<div className='text-4xl font-bold mb-4 text-center'>
 												{openedWork.name}
 											</div>
-											<div className='text-lg opacity-80 mb-4'>aboba</div>
+											<div className='opacity-80 mb-8 flex-1'>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit.
+												Consequatur, perferendis cum ut ratione soluta sapiente
+												alias quo ipsa voluptas eum.
+											</div>
+											<div className='flex items-center gap-2 mb-2'>
+												<Octicon />
+												<a
+													href='https://games-world-ten.vercel.app'
+													target='_blank'
+													className='text-[#4493f8] hover:underline text-sm'
+												>
+													games-world-ten.vercel.app
+												</a>
+											</div>
+											<div className='flex items-center gap-2 mb-8'>
+												<GitHubMini />
+												<a
+													href='https://github.com/ArcticGa/GamesPetProject'
+													target='_blank'
+													className='text-[#4493f8] hover:underline text-sm'
+												>
+													github.com/ArcticGa/GamesPetProject
+												</a>
+											</div>
+											<div className='text-lg mb-2'>
+												Технологии и Инструменты:
+											</div>
+											<div className='flex items-center gap-1.5 flex-wrap'>
+												<div className='py-1 px-4 rounded-full cursor-pointer border-2 border-border-ballpit hover:bg-border-ballpit text-sm'>
+													React
+												</div>
+											</div>
 										</div>
-
-										<button
-											onClick={() => setOpenedWork(null)}
-											className='mt-6 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-xl'
-										>
-											Close
-										</button>
 									</div>
 								</motion.div>
+
+								{window.innerWidth < 700 && (
+									<div className='absolute top-20 right-50 cursor-pointer'>
+										<Close />
+									</div>
+								)}
 							</motion.div>
 						)}
 					</AnimatePresence>
