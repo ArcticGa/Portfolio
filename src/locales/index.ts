@@ -69,6 +69,7 @@ export const translations = {
 			'Everything starts with an idea, an experience for those who visit my space on the web. The user must be surprised, engaged, involved! To create something unique and special, I bring my design to life with the latest development technologies, choosing the ones best suited to the project.',
 
 		codingTechnologiesSecondTitle: 'My Technologies',
+		codingTechnologiesText: 'Skills levels',
 
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Code & Design',
@@ -182,6 +183,7 @@ export const translations = {
 			'Всё начинается с идеи, с впечатления для тех, кто посещает моё пространство в сети. Пользователь должен быть удивлён, вовлечён, заинтересован! Чтобы создать нечто уникальное и особенное, я воплощаю свой дизайн в жизнь с помощью новейших технологий разработки, выбирая те, что лучше всего подходят для проекта.',
 
 		codingTechnologiesSecondTitle: 'Мои Технологии',
+		codingTechnologiesText: 'Уровни изучения',
 
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Код & Дизайн',

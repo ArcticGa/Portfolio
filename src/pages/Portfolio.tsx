@@ -83,7 +83,7 @@ const Portfolio = () => {
 					<AnimatePresence>
 						{openedWork && (
 							<motion.div
-								className='fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50'
+								className='fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-20'
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
@@ -139,7 +139,7 @@ const Portfolio = () => {
 												Технологии и Инструменты:
 											</div>
 											<div className='flex items-center gap-1.5 flex-wrap'>
-												<div className='py-1 px-4 rounded-full cursor-pointer border-2 border-border-ballpit hover:bg-border-ballpit text-sm'>
+												<div className='py-1 px-4 rounded-full cursor-pointer border-2 border-border-ballpit hover:text-base hover:bg-border-ballpit text-sm'>
 													React
 												</div>
 											</div>

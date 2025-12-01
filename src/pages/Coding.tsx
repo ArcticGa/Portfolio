@@ -16,6 +16,8 @@ const fadeUpVariant: Variants = {
 	},
 }
 
+const skillsLevelArr = ['basic', 'intermediate', 'experienced', 'high'] as const
+
 const Coding = () => {
 	const t = useTranslate()
 
@@ -48,7 +50,24 @@ const Coding = () => {
 				text='codingMainInfoBlockText'
 			/>
 
-			<InfoBlockPage secondTitle='codingTechnologiesSecondTitle' />
+			<InfoBlockPage
+				secondTitle='codingTechnologiesSecondTitle'
+				text='codingTechnologiesText'
+			>
+				<div className='mt-4'>
+					{skillsLevelArr.map((skill, index) => (
+						<>
+							<div key={index} className='flex items-center'>
+								<div className='bg-base w-3 h-3 rounded-full mr-5' />
+								<div className='text-lg'>{t(skill)}</div>
+							</div>
+							{skillsLevelArr.length !== index + 1 && (
+								<div className='h-4 w-0.5 bg-base ml-[5px]'></div>
+							)}
+						</>
+					))}
+				</div>
+			</InfoBlockPage>
 
 			<motion.div
 				variants={fadeUpVariant}
