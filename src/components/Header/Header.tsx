@@ -74,7 +74,7 @@ const Header = () => {
 	}
 
 	return (
-		<header className='flex items-center justify-between px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm bg-transparent'>
+		<header className='flex items-center justify-between px-35 max-2xl:px-20 max-xl:px-10 max-lg:px-8bg-transparent'>
 			<div
 				onClick={handleBackHome}
 				className='flex items-center gap-5 h-10 cursor-pointer'

@@ -156,6 +156,25 @@ export const portfolioWorks = {
 			{
 				img: '/public/images/gamesWorldImg.png',
 				name: 'Games World',
+				text: 'portfolioGamesWorld',
+				mainLink: 'https://games-world-ten.vercel.app',
+				githubLink: 'https://github.com/ArcticGa/GamesPetProject',
+				technologies: [
+					'React',
+					'TypeScript',
+					'Tailwind CSS',
+					'Redux Toolkit',
+					'React Hook Form',
+					'Axios',
+					'React Router',
+					'Swiper',
+					'React Content Loader',
+					'Vercel',
+					'Node.js',
+					'Express.js',
+					'MongoDB',
+					'JWT',
+				],
 			},
 		],
 	},
@@ -167,6 +186,6 @@ export const portfolioWorks = {
 		name: '3D',
 		works: [],
 	},
-}
+} as const
 
 export type PortfolioKey = keyof typeof portfolioWorks

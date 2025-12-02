@@ -65,7 +65,7 @@ const Home = () => {
 				/>
 			</div>
 
-			<div className='px-container max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm'>
+			<div className='px-container max-2xl:px-container-2xl max-xl:px-container-xl max-lg:px-container-lg max-sm:px-container-sm'>
 				<AnimatePresence mode='wait' custom={direction}>
 					{scene === 0 && (
 						<motion.div

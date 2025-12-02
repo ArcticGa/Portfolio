@@ -62,7 +62,7 @@ const Coding = () => {
 								<div className='text-lg'>{t(skill)}</div>
 							</div>
 							{skillsLevelArr.length !== index + 1 && (
-								<div className='h-4 w-0.5 bg-base ml-[5px]'></div>
+								<div className='h-4 w-0.5 bg-base ml-[5px]' />
 							)}
 						</>
 					))}

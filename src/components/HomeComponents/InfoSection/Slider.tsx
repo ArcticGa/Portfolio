@@ -61,7 +61,7 @@ const Slider = () => {
 	}, [activeSlide, isScrolling, goTo])
 
 	return (
-		<div className='ml-90 max-xl:ml-40 max-lg:ml-30 max-md:ml-15 max-sm:ml-5'>
+		<div className='ml-90 max-2xl:ml-30 max-xl:ml-40 max-lg:ml-30 max-md:ml-15 max-sm:ml-5'>
 			<div className='relative mb-6 '>
 				<div className='absolute -left-30 top-0.5 flex items-center gap-2 max-md:hidden'>
 					<div
@@ -81,8 +81,9 @@ const Slider = () => {
 					{t(slides[activeSlide].title)}
 				</div>
 			</div>
+
 			<div
-				className='relative w-full flex items-center justify-center select-none ml-70 mb-12 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
+				className='relative w-full flex items-center justify-center select-none ml-70 mb-12 max-2xl:ml-100 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
 				ref={containerRef}
 			>
 				<motion.div

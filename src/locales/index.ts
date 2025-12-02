@@ -69,7 +69,7 @@ export const translations = {
 			'Everything starts with an idea, an experience for those who visit my space on the web. The user must be surprised, engaged, involved! To create something unique and special, I bring my design to life with the latest development technologies, choosing the ones best suited to the project.',
 
 		codingTechnologiesSecondTitle: 'My Technologies',
-		codingTechnologiesText: 'Skills levels',
+		codingTechnologiesText: 'Levels:',
 
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Code & Design',
@@ -110,6 +110,10 @@ export const translations = {
 		artist3DSecondTitle: 'Simple but impactful',
 		artist3DText:
 			'With a 3D model, you can create a dramatic visual impact, even with just a few polygons! Especially on the web, where a site`s performance is essential, it`s possible to create captivating 3D experiences that engage the user without sacrificing efficiency.',
+
+		// Portfolio Page
+		portfolioGamesWorld:
+			'A web app for finding games to suit your taste: a game catalog, reviews, favorites, and personal profiles.',
 	},
 	ru: {
 		// Navigation and Slider Titles
@@ -183,7 +187,7 @@ export const translations = {
 			'Всё начинается с идеи, с впечатления для тех, кто посещает моё пространство в сети. Пользователь должен быть удивлён, вовлечён, заинтересован! Чтобы создать нечто уникальное и особенное, я воплощаю свой дизайн в жизнь с помощью новейших технологий разработки, выбирая те, что лучше всего подходят для проекта.',
 
 		codingTechnologiesSecondTitle: 'Мои Технологии',
-		codingTechnologiesText: 'Уровни изучения',
+		codingTechnologiesText: 'Уровни:',
 
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Код & Дизайн',
@@ -223,5 +227,9 @@ export const translations = {
 		artist3DSecondTitle: 'Просто, но эффективно',
 		artist3DText:
 			'С помощью 3D-модели можно создать впечатляющий визуальный эффект, даже используя всего несколько полигонов! Особенно в интернете, где производительность сайта имеет решающее значение, можно создавать захватывающие 3D-впечатления, которые увлекают пользователя, не жертвуя эффективностью.',
+
+		// Portfolio Page
+		portfolioGamesWorld:
+			'Веб-приложение для поиска игр на свой вкус: каталог игр, обзоры, избранное и персональные профили.',
 	},
 } as const
