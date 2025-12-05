@@ -353,8 +353,10 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 				<div className='sticker-main' style={stickerMainStyle}>
 					<div style={{ filter: 'url(#pointLight)' }}>
 						<img
+							loading='lazy'
+							decoding='async'
 							src={imageSrc}
-							alt=''
+							alt='sticker-image'
 							className='block'
 							style={imageStyle}
 							draggable='false'
@@ -369,8 +371,9 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 				>
 					<div className='sticker-flap' style={flapStyle}>
 						<img
+							loading='lazy'
 							src={imageSrc}
-							alt=''
+							alt='sticker-image'
 							className='block'
 							style={shadowImageStyle}
 							draggable='false'
@@ -385,8 +388,9 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 				>
 					<div style={{ filter: 'url(#pointLightFlipped)' }}>
 						<img
+							decoding='async'
 							src={imageSrc}
-							alt=''
+							alt='sticker-image'
 							className='block'
 							style={shadowImageStyle}
 							draggable='false'

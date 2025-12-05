@@ -119,6 +119,8 @@ const Slider = () => {
 								}}
 							>
 								<img
+									loading='lazy'
+									decoding='async'
 									src={slide.img}
 									alt='slide-img'
 									className='object-cover w-full h-full'

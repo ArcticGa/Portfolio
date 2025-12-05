@@ -57,7 +57,7 @@ const PagesMainSection = ({
           rgba(${theme === 'dark' ? '5, 0, 13,' : '245, 242, 235,'} ${
 						isMobile ? '0.8' : '0'
 					})
-        ), url('/public/images/${image}')`,
+        ), url('/images/${image}')`,
 				}}
 				className='absolute top-0 right-0 w-[65%] h-[calc(100vh-105px-16px)] bg-no-repeat bg-cover origin-center max-xl:w-full max-md:w-[95%] max-sm:w-[175%]'
 			/>

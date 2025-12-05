@@ -5,7 +5,7 @@ import * as THREE from 'three'
 
 const ModelAxolotl = () => {
 	const groupRef = useRef<THREE.Group>(null)
-	const { scene } = useGLTF('/public/models/axolotl.glb')
+	const { scene } = useGLTF('/models/axolotl.glb')
 
 	useFrame(() => {
 		if (groupRef.current) {

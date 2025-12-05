@@ -23,7 +23,7 @@ const About = () => {
 				startText='aboutStartText'
 				title='aboutTitle'
 				description='aboutDescription'
-				image='bgAbout.png'
+				image='bgAbout.avif'
 			/>
 
 			<InfoBlockPage

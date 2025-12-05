@@ -14,34 +14,37 @@ const IntroScreen = ({ onFinish }: { onFinish: () => void }) => {
 	}
 
 	const item: Variants = {
-		hidden: { opacity: 0, y: 20 },
+		hidden: { opacity: 0, y: 20, visibility: 'hidden' },
 		visible: {
 			opacity: 1,
 			y: 0,
+			visibility: 'visible',
 			transition: { duration: 0.5, ease: [0.17, 0.55, 0.55, 1] },
 		},
 	}
 
 	useEffect(() => {
-		const timer = setTimeout(() => setLettersVisible(true), 100)
-		return () => clearTimeout(timer)
+		document.fonts.ready.then(() => {
+			const timer = setTimeout(() => setLettersVisible(true), 100)
+			return () => clearTimeout(timer)
+		})
 	}, [])
 
 	useEffect(() => {
 		if (!active) {
-			const timeout = setTimeout(() => onFinish(), 1650)
+			const timeout = setTimeout(() => onFinish(), 500)
 			return () => clearTimeout(timeout)
 		}
 	}, [active, onFinish])
 
 	return (
 		<motion.div
-			className='fixed inset-0 flex flex-col items-center justify-center bg-background light:bg-base z-50'
+			className='fixed inset-0 flex flex-col items-center justify-center bg-background light:bg-base z-50 transition-colors duration-500'
 			initial={{ opacity: 1 }}
 			animate={{ opacity: 1 }}
 		>
 			<motion.div
-				className='text-5xl font-texts font-semibold tracking-[0.3em] flex gap-2'
+				className='text-5xl font-texts font-semibold tracking-[0.3em] flex gap-2 min-h-24'
 				variants={container}
 				initial='hidden'
 				animate={lettersVisible ? 'visible' : 'hidden'}

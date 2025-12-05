@@ -5,7 +5,7 @@ import * as THREE from 'three'
 
 const Model = ({ isIntroDone }: { isIntroDone: boolean }) => {
 	const groupRef = useRef<THREE.Group>(null)
-	const { scene } = useGLTF('/public/models/nina.glb')
+	const { scene } = useGLTF('/models/nina.glb')
 
 	useFrame(() => {
 		if (isIntroDone && groupRef.current) {

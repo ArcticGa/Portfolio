@@ -1,7 +1,8 @@
 import type React from 'react'
 import type { SetStateAction } from 'react'
 import { useAppSelector } from '../../redux/store'
-import { navPortfolioItems, type PortfolioKey } from '../../utils/arrays'
+import type { PortfolioKey } from '../../types/types'
+import { navPortfolioItems } from '../../utils/arrays'
 
 type PortfolioNavProps = {
 	works: PortfolioKey

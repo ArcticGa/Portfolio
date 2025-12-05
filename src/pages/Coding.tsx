@@ -30,7 +30,7 @@ const Coding = () => {
 				startText='codingStartText'
 				title='codingTitle'
 				description='codingDescription'
-				image='bgCoding.png'
+				image='bgCoding.avif'
 			/>
 
 			<motion.div

@@ -1,6 +1,6 @@
 import { useGLTF, useTexture } from '@react-three/drei'
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import CursorGlow from './components/BaseComponents/CursorGlow'
 import PaddingBlock from './components/BaseComponents/PaddingsBlock'
@@ -24,25 +24,31 @@ const pageVariants: Variants = {
 const App = () => {
 	const [showIntro, setShowIntro] = useState(true)
 	const { theme } = useAppSelector(state => state.headerSlice)
-
 	const location = useLocation()
 
-	useGLTF.preload('/public/models/nina.glb')
-	useGLTF.preload('/public/models/axolotl.glb')
-	useTexture.preload('/public/hdr/venice_sunset_1k.hdr')
+	useGLTF.preload('/models/nina.glb')
+	useGLTF.preload('/models/axolotl.glb')
+	useTexture.preload('/hdr/venice_sunset_1k.hdr')
+
+	useLayoutEffect(() => {
+		const storageTheme = localStorage.getItem('theme')
+		if (storageTheme === 'light') {
+			document.documentElement.classList.add('light')
+		} else {
+			document.documentElement.classList.remove('light')
+		}
+	}, [])
 
 	useEffect(() => {
-		const storageTheme = localStorage.getItem('theme')
-
-		if (storageTheme && storageTheme === 'light') {
-			document.documentElement.classList.add(storageTheme)
+		if (theme === 'light') {
+			document.documentElement.classList.add('light')
 		} else {
 			document.documentElement.classList.remove('light')
 		}
 	}, [theme])
 
 	const handleModelLoaded = () => {
-		setShowIntro(false)
+		setTimeout(() => setShowIntro(false), 300)
 	}
 
 	const showCursorGlow = location.pathname !== '/'
@@ -78,7 +84,7 @@ const App = () => {
 											transition={{
 												type: 'tween',
 												ease: 'easeInOut',
-												duration: 0.5,
+												duration: 0.4,
 											}}
 										>
 											<PaddingBlock>
@@ -98,7 +104,7 @@ const App = () => {
 											transition={{
 												type: 'tween',
 												ease: 'easeInOut',
-												duration: 0.5,
+												duration: 0.4,
 											}}
 										>
 											<PaddingBlock>
@@ -118,7 +124,7 @@ const App = () => {
 											transition={{
 												type: 'tween',
 												ease: 'easeInOut',
-												duration: 0.5,
+												duration: 0.4,
 											}}
 										>
 											<PaddingBlock>

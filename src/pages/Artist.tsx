@@ -24,7 +24,7 @@ const Artist = () => {
 				startText='artistStartText'
 				title='artistTitle'
 				description='artistDescription'
-				image='bgArtist.png'
+				image='bgArtist.avif'
 			/>
 
 			<InfoBlockPage
@@ -37,20 +37,26 @@ const Artist = () => {
 			<InfoBlockPage secondTitle='artistToolsSecondTitle'>
 				<div className='flex gap-4 mt-8'>
 					<img
+						loading='lazy'
+						decoding='async'
 						className='w-24 h-24'
-						src='/public/images/photoshopLogo.png'
+						src='/images/photoshopLogo.avif'
 						alt='photoshop-logo'
 					/>
 
 					<img
+						loading='lazy'
+						decoding='async'
 						className='w-24 h-24'
-						src='/public/images/kritaLogo.png'
+						src='/images/kritaLogo.avif'
 						alt='krita-logo'
 					/>
 
 					<img
+						loading='lazy'
+						decoding='async'
 						className='w-24.5 h-24 p-1.5 rounded-3xl bg-[#422b01]'
-						src='/public/images/blenderLogo.png'
+						src='/images/blenderLogo.avif'
 						alt='blender-logo'
 					/>
 				</div>

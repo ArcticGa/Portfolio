@@ -632,7 +632,7 @@ const MagicBento: React.FC<BentoProps> = ({
 							enableMagnetism={enableMagnetism}
 						>
 							<div className='card__header flex justify-center gap-3 relative text-white'>
-								<span className='card__label text-4xl font-semibold select-none'>
+								<span className='card__label text-4xl font-semibold select-none text-center'>
 									{t(card.label!)}
 								</span>
 							</div>

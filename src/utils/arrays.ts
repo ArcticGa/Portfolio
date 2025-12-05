@@ -1,11 +1,11 @@
 import type { WorkItem } from '../types/types'
-import jsSticker from '/public/images/jsSticker.png'
-import reactSticker from '/public/images/reactSticker.png'
-import reduxSticker from '/public/images/reduxSticker.png'
-import tailwindSticker from '/public/images/tailwindSticker.png'
-import tsSticker from '/public/images/tsSticker.png'
-import viteSticker from '/public/images/viteSticker.png'
-import vsCodeSticker from '/public/images/vsCodeSticker.png'
+import jsSticker from '/images/jsSticker.avif'
+import reactSticker from '/images/reactSticker.avif'
+import reduxSticker from '/images/reduxSticker.avif'
+import tailwindSticker from '/images/tailwindSticker.avif'
+import tsSticker from '/images/tsSticker.avif'
+import viteSticker from '/images/viteSticker.avif'
+import vsCodeSticker from '/images/vsCodeSticker.avif'
 
 export const skillsList = [
 	'Developer',
@@ -19,28 +19,28 @@ export const skillsList = [
 export const slides = [
 	{
 		id: 1,
-		img: '/public/images/bgAbout.png',
+		img: '/images/bgAbout.avif',
 		link: '/about',
 		title: 'about',
 		text: 'descAbout',
 	},
 	{
 		id: 2,
-		img: '/public/images/bgCoding.png',
+		img: '/images/bgCoding.avif',
 		link: '/coding',
 		title: 'coding',
 		text: 'descCoding',
 	},
 	{
 		id: 3,
-		img: '/public/images/bgArtist.png',
+		img: '/images/bgArtist.avif',
 		link: '/artist',
 		title: 'artist',
 		text: 'descArtist',
 	},
 	{
 		id: 4,
-		img: '/public/images/bgPortfolio.jpg',
+		img: '/images/bgPortfolio.avif',
 		link: '/portfolio',
 		title: 'portfolio',
 		text: 'descPortfolio',
@@ -155,7 +155,7 @@ export const portfolioWorks = {
 		name: 'Web',
 		works: [
 			{
-				img: '/public/images/gamesWorldImg.png',
+				img: '/images/gamesWorldImg.avif',
 				ratio: 'landscape',
 				name: 'Games World',
 				text: 'portfolioGamesWorld',
@@ -175,7 +175,27 @@ export const portfolioWorks = {
 					'Node.js',
 					'Express.js',
 					'MongoDB',
+					'FreeToGame API',
 					'JWT',
+				],
+			} as const as WorkItem,
+			{
+				img: '/images/portfolio.avif',
+				ratio: 'landscape',
+				name: 'Portfolio',
+				text: 'portfolioPortfolio',
+				mainLink: '...',
+				githubLink: 'https://github.com/ArcticGa/Portfolio',
+				technologies: [
+					'React',
+					'TypeScript',
+					'Tailwind CSS',
+					'Framer-Motion',
+					'ThreeJs',
+					'Redux Toolkit',
+					'React Router',
+					'ReactBits',
+					'Vercel',
 				],
 			} as const as WorkItem,
 		],
@@ -188,14 +208,14 @@ export const portfolioWorks = {
 		name: '3D',
 		works: [
 			{
-				img: '/public/images/nina.png',
+				img: '/images/nina.avif',
 				ratio: 'portrait',
 				name: 'Anime Girl',
 				text: 'portfolioAnime',
 				technologies: ['Blender'],
 			} as const as WorkItem,
 			{
-				img: '/public/images/axolotl.png',
+				img: '/images/axolotl.avif',
 				ratio: 'portrait',
 				name: 'Axolotl',
 				text: 'portfolioAxolotl',

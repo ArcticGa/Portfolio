@@ -12,23 +12,23 @@ export const translations = {
 		// Home page -> scene1 -> Text
 		name: 'ALEXANDER',
 		nickname: 'DEVALEX',
-		welcome: `Welcome to my portfolio! I'm Alexander, a web developer specializing in Front-End and digital artist specializing in 3D Artist & Concept Artist, I'll share a glimpse into my work and what I love to do.`,
+		welcome: `Welcome to my portfolio! My name is Alexander, I am a Web Developer specializing in Front-End development. This is my main occupation and work. I also engage in drawing and 3D as a personal hobby. Here, I will tell you about my work and what I enjoy doing.`,
 
 		// Home Page -> scene2 -> Descriptions
 		descAbout:
-			'A little fragment of me and my world, to give you a precise idea of what I do.',
+			'A small fragment of me to give you an accurate idea of what I do.',
 		descCoding:
 			'The heart of my work is programming, the place where I bring logic and creativity together.',
 		descArtist:
-			'Design and drawing are my second favorite things. Dive into this world with me.',
+			'Design and drawing are my hobby and second passion. Immerse yourself in this world with me.',
 		descPortfolio:
-			'On this page you will see Web and Design projects, meticulously divided by category',
+			'On this page, you will see Web, Design, and 3D projects, divided by categories.',
 		btnOpenPage: 'OPEN PAGE',
 
 		// Footer Component
 		footerTitle: 'Contact',
 		footerDescription:
-			'If you are interested in learning more about me, you can contact me in Telegram, Discord, X(Twitter) or GitHub',
+			'If you`re interested in learning more about me, you can contact me via Telegram, Discord, X (Twitter). You can also visit my GitHub.',
 		discordCopyText: 'Discord Id copied successfully!',
 
 		// Skill levels
@@ -41,7 +41,7 @@ export const translations = {
 		aboutStartText: 'Coding and Art are a completely different world.',
 		aboutTitle: 'Who I am',
 		aboutDescription:
-			'A brief introduction to who I am and what I do as a developer and artist',
+			'A brief introduction about who I am and what I do as a developer.',
 		aboutTitleAboutMe: 'Introduction',
 		aboutTextAboutMe: `My name is Alexander, I'm a Front-End Developer who is passionate about creating digital web applications. From small design-oriented projects to large-scale commercial ones. My distinctive strength lies in crafting innovative solutions and thinking outside the box, seamlessly blending code and design, and contributing to large projects within a strong team environment.That's why my goal is to build applications that are not only efficient but also deliver a pleasant and visually appealing experience to users. After all, the user is always the top priority in any project. 😀`,
 		aboutSkillsAndProjectsTitle: 'Personal skills and projects',
@@ -52,8 +52,7 @@ export const translations = {
 			'Front-End development with a focus on performance and design.',
 		descriptionArtistCard:
 			'Creative concept design, 3D art and digital illustration.',
-		descriptionPortfolioCard:
-			'A collection of my professional works and personal projects.',
+		descriptionPortfolioCard: 'A collection of my works and personal projects.',
 		aboutCardBtn: 'Visit',
 
 		// Coding Page
@@ -66,7 +65,7 @@ export const translations = {
 		codingMainInfoBlockTitle: 'FROM IDEAS TO CODE',
 		codingMainInfoBlockSecondTitle: 'My method',
 		codingMainInfoBlockText:
-			'Everything starts with an idea, an experience for those who visit my space on the web. The user must be surprised, engaged, involved! To create something unique and special, I bring my design to life with the latest development technologies, choosing the ones best suited to the project.',
+			'Everything starts with an idea. The user should be surprised, engaged, interested! To create something unique and special, I design and turn it into code using the latest development technologies, choosing those best suited for the project.',
 
 		codingTechnologiesSecondTitle: 'My Technologies',
 		codingTechnologiesText: 'Levels:',
@@ -74,11 +73,11 @@ export const translations = {
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Code & Design',
 		codingFrontEndText:
-			'FrontEnd is what the user sees and interacts with. My goal is to deliver the best user experience by applying personal skills, new technologies, and modern approaches. I also aim to contribute value in team development by writing clean and high-quality code.',
+			'FrontEnd is what the user sees and interacts with. My task is to ensure the best user experience by applying personal skills, new technologies, and modern approaches.',
 
 		codingReactTitle: 'React & Next',
 		codingReactText:
-			'React is the foundation I use in 90% of my projects, along with TypeScript as an enhancement on top of vanilla JS for more flexible and high-quality development. Currently, I`m actively learning and making the transition to NextJs.',
+			'React is the foundation I use in 90% of my projects. Along with TypeScript as an enhancement to core JS for more flexible and higher-quality development. I am currently actively learning and gradually transitioning to NextJs.',
 		codingAdviceStickers: 'Drag and drop stickers as you wish.',
 
 		codingBackEndTitle: 'BACKEND',
@@ -99,7 +98,7 @@ export const translations = {
 		artistMainInfoTitle: 'DRAWING & DESIGN',
 		artistMainInfoSecondTitle: 'Introduction',
 		artistMainInfoText:
-			'Welcome to my creative space! My journey into the world of design began not long ago, and since then, I have fully immersed myself in mastering digital illustration—from creating initial sketches to animated GIF compositions. Each project is a new step in my growth, and I am dedicated to continuously improving my skills. My portfolio is currently being updated with new work, so please check back soon. Thank you for stopping by 😀',
+			'Welcome to my creative space! My journey into art and drawing started not too long ago, and I`ve been steadily progressing in this field ever since. The portfolio is currently being updated, and new works will be added here soon. 😀',
 
 		artistToolsSecondTitle: 'Tools',
 
@@ -114,8 +113,8 @@ export const translations = {
 		// Portfolio Page
 		portfolioSubtitle: 'A selection of my digital works!',
 		portfolioGamesWorld:
-			'A web app for finding games to suit your taste: a game catalog, reviews, favorites, and personal profiles.',
-
+			'FullStack Web Application that uses a third-party API to find games to suit your taste: a game catalog, reviews, favorites, and personal profiles.',
+		portfolioPortfolio: 'My portfolio app. You`re right here now, heh.',
 		portfolioAnime: '3D Anime model.',
 		portfolioAxolotl: 'Axolotl model. Mini.',
 	},
@@ -133,23 +132,23 @@ export const translations = {
 		name: 'АЛЕКСАНДР',
 		nickname: 'DEVALEX',
 		welcome:
-			'Добро пожаловать в моё портфолио! Меня зовут Александр, я Web Developer в направлении Front-End разработки и цифровой художник в направлениях 3D-Artist & Concept Artist. Здесь я расскажу о своей работе и о том, что мне нравится делать',
+			'Добро пожаловать в моё портфолио! Меня зовут Александр, я Web Developer в направлении Front-End разработки. Это мое основное занятие и работа. Так же я занимаюсь рисованием и 3D как хобби для себя. Здесь я расскажу о своей работе и о том, что мне нравится делать.',
 
 		// Home Page -> scene2 -> Descriptions
 		descAbout:
-			'Маленький фрагмент меня и моего мира, чтобы дать вам точное представление о том, чем я занимаюсь.',
+			'Маленький фрагмент меня, чтобы дать вам точное представление о том, чем я занимаюсь.',
 		descCoding:
 			'Основой моей работы является программирование, где я объединяю логику и творчество.',
 		descArtist:
-			'Дизайн и рисование — мое второе самое любимое дело. Погрузитесь в этот мир вместе со мной.',
+			'Дизайн и рисование — мое хобби и второе любимое дело. Погрузитесь в этот мир вместе со мной.',
 		descPortfolio:
-			'На этой страницу вы увидите Web и Design проекты, тщательно разделенные по категориям.',
+			'На этой страницу вы увидите Web, Design и 3D проекты, разделенные по категориям.',
 		btnOpenPage: 'ОТКРЫТЬ СТРАНИЦУ',
 
 		// Footer Component
 		footerTitle: 'Контакт',
 		footerDescription:
-			'Если вам интересно узнать обо мне больше, вы можете связаться со мной через телеграмм, дискорд, или GitHub',
+			'Если вам интересно узнать обо мне больше, вы можете связаться со мной через телеграмм, дискорд, x(twitter). И так же можете посетить мой GitHub',
 		discordCopyText: 'Discord Id успешно скопирован!',
 
 		// Skill levels
@@ -162,7 +161,7 @@ export const translations = {
 		aboutStartText: 'Программирование и искусство это совсем другой мир',
 		aboutTitle: 'Who I am',
 		aboutDescription:
-			'Краткое введение о том, кто я и чем занимаюсь как разработчик и художник',
+			'Краткое введение о том, кто я и чем занимаюсь как разработчик.',
 		aboutTitleAboutMe: 'Введение',
 		aboutTextAboutMe:
 			'Меня зовут Александр, я Front-End разработчик, который обожает создавать цифровые Веб-приложения. От небольших проектов с уклоном на дизайн, до больших коммерческих проектов. Моя отличительная черта — умение создавать необычные решения и выкручиваться из сложных ситуаций, умение сочетать код и дизайн, умение писать большие проекты в хорошей команде. Поэтому моя цель — создавать приложения, которые не только эффективны, но и приятны в использовании и дизайне для пользователей. Ведь пользователь всегда самый главный в проектах. 😀',
@@ -174,8 +173,7 @@ export const translations = {
 			'Разработка Front-End с упором на производительность и дизайн.',
 		descriptionArtistCard:
 			'Креативный концептуальный дизайн, Anime-арты, 3D-арты и цифровая иллюстрация.',
-		descriptionPortfolioCard:
-			'Коллекция моих профессиональных работ и личных проектов.',
+		descriptionPortfolioCard: 'Коллекция моих работ и личных проектов.',
 		aboutCardBtn: 'Перейти',
 
 		// Coding Page
@@ -188,7 +186,7 @@ export const translations = {
 		codingMainInfoBlockTitle: 'ОТ ИДЕЙ ДО КОДА',
 		codingMainInfoBlockSecondTitle: 'Мой метод',
 		codingMainInfoBlockText:
-			'Всё начинается с идеи, с впечатления для тех, кто посещает моё пространство в сети. Пользователь должен быть удивлён, вовлечён, заинтересован! Чтобы создать нечто уникальное и особенное, я воплощаю свой дизайн в жизнь с помощью новейших технологий разработки, выбирая те, что лучше всего подходят для проекта.',
+			'Всё начинается с идеи. Пользователь должен быть удивлён, вовлечён, заинтересован! Чтобы создать нечто уникальное и особенное, я создаю дизайн и превращаю его в код с помощью новейших технологий разработки, выбирая те, что лучше всего подходят для проекта.',
 
 		codingTechnologiesSecondTitle: 'Мои Технологии',
 		codingTechnologiesText: 'Уровни:',
@@ -196,11 +194,11 @@ export const translations = {
 		codingFrontEndTitle: 'FRONTEND',
 		codingFrontEndSecondTitle: 'Код & Дизайн',
 		codingFrontEndText:
-			'FrontEnd — это то, что пользователь видит и с чем взаимодействует. Моя задача — обеспечивать лучший пользовательский опыт, применяя личные навыки, новые технологии и современные подходы. А также приносить пользу в командной разработке, создавая читаемый и качественный код.',
+			'FrontEnd — это то, что пользователь видит и с чем взаимодействует. Моя задача — обеспечивать лучший пользовательский опыт, применяя личные навыки, новые технологии и современные подходы.',
 
 		codingReactTitle: 'React & Next',
 		codingReactText:
-			'React - это основа, которую я использую в 90% проектов. А также TypeScript как накрутка на базовый JS для более гибкой и качественной разработки. Сейчас я активно изучаю и перехожу на NextJs.',
+			'React - это основа, которую я использую в 90% проектов. А также TypeScript как накрутка на базовый JS для более гибкой и качественной разработки. Сейчас я активно изучаю и плавно перехожу на NextJs.',
 		codingAdviceStickers: 'Перетаскивайте стикеры как хотите',
 
 		codingBackEndTitle: 'BACKEND',
@@ -220,7 +218,7 @@ export const translations = {
 		artistMainInfoTitle: 'Рисование & Дизайн',
 		artistMainInfoSecondTitle: 'Введение',
 		artistMainInfoText:
-			'Добро пожаловать в моё творческое пространство! Моё путешествие в мир дизайна началось не так давно, и с тех пор я полностью погрузился в процесс освоения цифровой иллюстрации — от создания первых набросков до анимированных GIF-композиций. Каждый проект для меня — это новый шаг в развитии, и я целенаправленно работаю над совершенствованием своего мастерства. В данный момент портфолио находится в процессе наполнения, и вскоре здесь появятся новые работы. Спасибо, что заглянули 😀',
+			'Добро пожаловать в моё творческое пространство! Мое знакомство с творчеством и рисованием началось не так давно и с тех пор я потихоньку двигаюсь в этом направлении. В данный момент портфолио находится в процессе наполнения, и вскоре здесь появятся новые работы. 😀',
 
 		artistToolsSecondTitle: 'Инструменты',
 
@@ -235,7 +233,9 @@ export const translations = {
 		// Portfolio Page
 		portfolioSubtitle: 'Подборка моих проектов!',
 		portfolioGamesWorld:
-			'Веб-приложение для поиска игр на свой вкус: каталог игр, обзоры, избранное и персональные профили.',
+			'FullStack веб-приложение c использованием стороннего API для поиска игр на свой вкус: каталог игр, обзоры, избранное и персональные профили.',
+		portfolioPortfolio:
+			'Мой портфолио сайт. Вы сейчас находитесь непосредственно здесь, хех.',
 
 		portfolioAnime: '3D Anime модель.',
 		portfolioAxolotl: 'Моделька Axolotl. Небольшая',

@@ -79,7 +79,9 @@ const Header = () => {
 				onClick={handleBackHome}
 				className='flex items-center gap-5 h-10 cursor-pointer'
 			>
-				<div className='bg-base light:bg-primary px-2 py-1 rounded-md text-white h-full w-10 flex items-center' />
+				<div className='light:bg-primary rounded-md text-white h-full w-10 flex items-center'>
+					<img src='/images/logo.avif' alt='logo' className='w-full h-full' />
+				</div>
 
 				<AnimatePresence mode='wait' custom={direction}>
 					{scene === 0 && (
