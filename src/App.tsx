@@ -69,7 +69,7 @@ const App = () => {
 						</motion.div>
 					) : (
 						<>
-							{showCursorGlow && <CursorGlow />}
+							{showCursorGlow && window.innerWidth > 700 && <CursorGlow />}
 							<Header />
 							<Routes location={location} key={location.pathname}>
 								<Route path='/' element={<Home />} />

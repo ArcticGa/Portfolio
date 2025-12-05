@@ -1,5 +1,4 @@
 import { motion, type Variants } from 'framer-motion'
-import FooterPages from '../components/BaseComponents/FooterPages'
 import InfoBlockPage from '../components/BaseComponents/InfoBlockPage'
 import PagesMainSection from '../components/BaseComponents/PagesMainSection'
 import { useTranslate } from '../hooks/useTranslate'
@@ -64,7 +63,7 @@ const About = () => {
 				<hr className='absolute left-[48%] -bottom-30 w-16 h-0.5 bg-hr-info text-hr-info rotate-90 max-md:hidden' />
 			</motion.div>
 
-			<FooterPages />
+			{/* <FooterPages /> */}
 		</div>
 	)
 }
