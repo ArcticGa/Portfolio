@@ -1,10 +1,10 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { lazy, useState } from 'react'
+import Discord from '../../assets/svgs/Discord'
+import GitHub from '../../assets/svgs/GitHub'
+import Telegram from '../../assets/svgs/Telegram'
+import X from '../../assets/svgs/X'
 import { useTranslate } from '../../hooks/useTranslate'
-import Discord from '../svgs/Discord'
-import GitHub from '../svgs/GitHub'
-import Telegram from '../svgs/Telegram'
-import X from '../svgs/X'
 
 const Ballpit = lazy(() => import('../../reactbits/Ballpit'))
 
@@ -57,7 +57,7 @@ const FooterPages = () => {
 			>
 				<div className='flex items-center justify-between max-lg:flex-col'>
 					<div className='max-lg:text-center'>
-						<div className='text-9xl font-bold mb-16 tracking-[6px] max-lg:text-7xl max-lg:tracking-[4px] max-lg:mb-8 '>
+						<div className='text-9xl font-bold mb-16 tracking-[6px] max-lg:text-7xl max-lg:tracking-[4px] max-lg:mb-8 max-2xl:text-8xl'>
 							{t('footerTitle')}
 						</div>
 						<div className='max-w-130 mb-32 max-lg:mb-8'>
@@ -88,19 +88,21 @@ const FooterPages = () => {
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.3 }}
-						className='relative overflow-hidden max-h-[500px] w-1/2 mt-30 border border-border-ballpit rounded-2xl max-lg:mt-8 max-lg:w-full max-lg:max-h-[340px] max-lg:mb-12'
+						className='relative overflow-hidden h-[500px] max-2xl:h-[450px] max-sm:h-[270px] w-1/2 mt-30 max-2xl:mt-12 border border-border-ballpit rounded-2xl max-lg:mt-8 max-lg:w-full max-lg:h-[340px] max-lg:mb-12'
 					>
-						<Ballpit
-							count={100}
-							gravity={0}
-							friction={1}
-							wallBounce={0.95}
-							followCursor={false}
-							colors={['#3726b5', '#fff', '#424242', '#221f4d']}
-							lightIntensity={200}
-							minSize={0.7}
-							ambientIntensity={2}
-						/>
+						<div className='h-full w-full overflow-hidden'>
+							<Ballpit
+								count={100}
+								gravity={0}
+								friction={1}
+								wallBounce={0.95}
+								followCursor={false}
+								colors={['#3726b5', '#fff', '#424242', '#221f4d']}
+								lightIntensity={200}
+								minSize={0.7}
+								ambientIntensity={2}
+							/>
+						</div>
 					</motion.div>
 				</div>
 			</motion.div>

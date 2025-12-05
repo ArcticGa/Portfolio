@@ -74,7 +74,7 @@ const Coding = () => {
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: true, amount: window.innerWidth > 700 ? 0.3 : 0.1 }}
-				className='grid grid-cols-5 gap-4 px-50 mb-30 select-none max-lg:grid-cols-3 max-md:grid-cols-1 max-lg:px-20 max-md:px-4'
+				className='grid grid-cols-5 gap-4 px-50 mb-30 select-none max-lg:grid-cols-3 max-md:grid-cols-1 max-2xl:px-25 max-lg:px-20 max-md:px-4'
 			>
 				{devSkills.map((skill, i) => (
 					<SpotlightCard key={i} className='flex flex-col justify-center'>

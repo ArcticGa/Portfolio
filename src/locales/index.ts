@@ -112,8 +112,12 @@ export const translations = {
 			'With a 3D model, you can create a dramatic visual impact, even with just a few polygons! Especially on the web, where a site`s performance is essential, it`s possible to create captivating 3D experiences that engage the user without sacrificing efficiency.',
 
 		// Portfolio Page
+		portfolioSubtitle: 'A selection of my digital works!',
 		portfolioGamesWorld:
 			'A web app for finding games to suit your taste: a game catalog, reviews, favorites, and personal profiles.',
+
+		portfolioAnime: '3D Anime model.',
+		portfolioAxolotl: 'Axolotl model. Mini.',
 	},
 	ru: {
 		// Navigation and Slider Titles
@@ -229,7 +233,11 @@ export const translations = {
 			'С помощью 3D-модели можно создать впечатляющий визуальный эффект, даже используя всего несколько полигонов! Особенно в интернете, где производительность сайта имеет решающее значение, можно создавать захватывающие 3D-впечатления, которые увлекают пользователя, не жертвуя эффективностью.',
 
 		// Portfolio Page
+		portfolioSubtitle: 'Подборка моих проектов!',
 		portfolioGamesWorld:
 			'Веб-приложение для поиска игр на свой вкус: каталог игр, обзоры, избранное и персональные профили.',
+
+		portfolioAnime: '3D Anime модель.',
+		portfolioAxolotl: 'Моделька Axolotl. Небольшая',
 	},
 } as const

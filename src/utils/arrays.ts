@@ -1,3 +1,4 @@
+import type { WorkItem } from '../types/types'
 import jsSticker from '/public/images/jsSticker.png'
 import reactSticker from '/public/images/reactSticker.png'
 import reduxSticker from '/public/images/reduxSticker.png'
@@ -155,6 +156,7 @@ export const portfolioWorks = {
 		works: [
 			{
 				img: '/public/images/gamesWorldImg.png',
+				ratio: 'landscape',
 				name: 'Games World',
 				text: 'portfolioGamesWorld',
 				mainLink: 'https://games-world-ten.vercel.app',
@@ -175,7 +177,7 @@ export const portfolioWorks = {
 					'MongoDB',
 					'JWT',
 				],
-			},
+			} as const as WorkItem,
 		],
 	},
 	design: {
@@ -184,8 +186,21 @@ export const portfolioWorks = {
 	},
 	modelling: {
 		name: '3D',
-		works: [],
+		works: [
+			{
+				img: '/public/images/nina.png',
+				ratio: 'portrait',
+				name: 'Anime Girl',
+				text: 'portfolioAnime',
+				technologies: ['Blender'],
+			} as const as WorkItem,
+			{
+				img: '/public/images/axolotl.png',
+				ratio: 'portrait',
+				name: 'Axolotl',
+				text: 'portfolioAxolotl',
+				technologies: ['Blender'],
+			} as const as WorkItem,
+		],
 	},
 } as const
-
-export type PortfolioKey = keyof typeof portfolioWorks

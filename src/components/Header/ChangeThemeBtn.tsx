@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
+import Moon from '../../assets/svgs/Moon'
+import Sun from '../../assets/svgs/Sun'
 import { setTheme } from '../../redux/slices/headerSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
-import Moon from '../svgs/Moon'
-import Sun from '../svgs/Sun'
 
 const ChangeThemeBtn = () => {
 	const dispatch = useAppDispatch()

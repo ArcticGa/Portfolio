@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
+import GitHubMini from '../assets/svgs/GitHubMini'
+import Octicon from '../assets/svgs/Octicon'
 import ClosePageBtn from '../components/BaseComponents/ClosePageBtn'
 import PortfolioNav from '../components/BaseComponents/PortfolioNav'
-import GitHubMini from '../components/svgs/GitHubMini'
-import Octicon from '../components/svgs/Octicon'
 import { useTranslate } from '../hooks/useTranslate'
-import { portfolioWorks, type PortfolioKey } from '../utils/arrays'
+import type { PortfolioKey } from '../types/types'
+import { portfolioWorks } from '../utils/arrays'
 
 const Portfolio = () => {
 	const [works, setWorks] = useState<PortfolioKey>('web')
@@ -15,21 +16,17 @@ const Portfolio = () => {
 
 	const t = useTranslate()
 
-	console.log(works)
-
 	const selected = portfolioWorks[works]
 
 	return (
 		<div className='relative'>
 			<ClosePageBtn />
 			<div className='h-[calc(100vh - 105px)]'>
-				<div className='mt-header-hight px-50 pt-8 max-2xl:px-20 max-xl:px-10 max-lg:px-8 max-lg:pt-4 max-sm:pt-2'>
+				<div className='mt-header-hight px-50 pt-8 max-sm:pb-24 max-2xl:px-20 max-xl:px-10 max-lg:px-8 max-lg:pt-4 max-sm:pt-2'>
 					<div className='text-7xl max-lg:text-5xl font-bold'>
 						{selected.name}
 					</div>
-					<div className='my-6 max-md:my-4'>
-						A selection of my digital works!
-					</div>
+					<div className='my-6 max-md:my-4'>{t('portfolioSubtitle')}</div>
 
 					<AnimatePresence mode='wait'>
 						<motion.div
@@ -48,7 +45,9 @@ const Portfolio = () => {
 									<motion.div
 										key={index}
 										onClick={() => setOpenedWork(work)}
-										className='group relative max-w-1/3 max-xl:max-w-1/2 max-sm:max-w-full w-full rounded-xl overflow-hidden bg-white/5 light:border-border-ballpit light:bg-black/15 cursor-pointer'
+										className={`group relative max-w-1/3 max-xl:max-w-1/2 max-sm:max-w-full w-full rounded-xl overflow-hidden bg-white/5 light:border-border-ballpit light:bg-black/15 cursor-pointer ${
+											work.ratio === 'portrait' ? 'max-w-1/5' : 'max-w-1/3'
+										}`}
 										whileHover='hover'
 										initial='initial'
 									>
@@ -59,7 +58,7 @@ const Portfolio = () => {
 										/>
 
 										<motion.div
-											className='absolute inset-0 bg-black/80'
+											className='absolute inset-0 bg-black/80 light:bg-base/80'
 											variants={{
 												initial: { opacity: 0 },
 												hover: { opacity: 1 },
@@ -68,7 +67,7 @@ const Portfolio = () => {
 										/>
 
 										<motion.div
-											className='absolute inset-0 flex items-center justify-center text-base text-3xl font-bold'
+											className='absolute inset-0 flex items-center justify-center text-base light:text-primary text-3xl font-bold'
 											variants={{
 												initial: { opacity: 0 },
 												hover: { opacity: 1 },
@@ -93,14 +92,20 @@ const Portfolio = () => {
 								onClick={() => setOpenedWork(null)}
 							>
 								<motion.div
-									className='relative rounded-2xl max-w-[1500px] max-2xl:max-w-[1300px] w-full flex max-xl:items-center max-xl:justify-center gap-4 p-4'
+									className={`relative rounded-2xl max-w-[1500px] max-2xl:max-w-[1300px] w-full flex justify-center max-xl:items-center max-xl:justify-center gap-4 p-4`}
 									initial={{ scale: 0.9, opacity: 0 }}
 									animate={{ scale: 1, opacity: 1 }}
 									exit={{ scale: 0.9, opacity: 0 }}
 									transition={{ duration: 0.3, ease: 'easeOut' }}
 									onClick={e => e.stopPropagation()}
 								>
-									<div className='w-3/4 rounded-xl max-lg:w-full overflow-hidden'>
+									<div
+										className={`rounded-xl overflow-hidden ${
+											openedWork.ratio === 'portrait'
+												? 'w-1/4 max-lg:w-2/3'
+												: 'w-3/4 max-lg:w-full'
+										}`}
+									>
 										<img
 											src={openedWork.img}
 											alt={openedWork.name}
@@ -114,46 +119,56 @@ const Portfolio = () => {
 												{openedWork.name}
 											</div>
 
-											<div className='opacity-80 mb-8 flex-1 text-sm max-md:text-base'>
-												{t(openedWork.text)}
-											</div>
+											{openedWork.text && (
+												<div className='opacity-80 mb-8 flex-1 text-sm max-md:text-base'>
+													{t(openedWork.text)}
+												</div>
+											)}
 
-											<div className='flex items-center gap-2 mb-2 break-all'>
-												<Octicon />
-												<a
-													href={openedWork.mainLink}
-													target='_blank'
-													className='text-[#4493f8] hover:underline text-sm text-nowrap overflow-hidden'
-												>
-													{openedWork.mainLink.slice(8)}
-												</a>
-											</div>
-
-											<div className='flex items-center gap-2 mb-8 break-all'>
-												<GitHubMini />
-												<a
-													href={openedWork.githubLink}
-													target='_blank'
-													className='text-[#4493f8] hover:underline text-sm text-nowrap overflow-hidden'
-												>
-													{openedWork.githubLink.slice(8)}
-												</a>
-											</div>
-
-											<div className='text-lg mb-2'>
-												Технологии и инструменты:
-											</div>
-
-											<div className='flex items-center gap-1.5 flex-wrap'>
-												{openedWork.technologies.map((tech, index) => (
-													<div
-														key={index}
-														className='py-1 px-4 rounded-full border border-border-ballpit text-sm hover:bg-border-ballpit light:hover:text-base cursor-pointer'
+											{openedWork.mainLink && (
+												<div className='flex items-center gap-2 mb-2 break-all'>
+													<Octicon />
+													<a
+														href={openedWork.mainLink}
+														target='_blank'
+														className='text-[#4493f8] hover:underline text-sm text-nowrap overflow-hidden'
 													>
-														{tech}
+														{openedWork.mainLink.slice(8)}
+													</a>
+												</div>
+											)}
+
+											{openedWork.githubLink && (
+												<div className='flex items-center gap-2 mb-8 break-all'>
+													<GitHubMini />
+													<a
+														href={openedWork.githubLink}
+														target='_blank'
+														className='text-[#4493f8] hover:underline text-sm text-nowrap overflow-hidden'
+													>
+														{openedWork.githubLink.slice(8)}
+													</a>
+												</div>
+											)}
+
+											{openedWork.technologies && (
+												<>
+													<div className='text-lg mb-2'>
+														Технологии и инструменты:
 													</div>
-												))}
-											</div>
+
+													<div className='flex items-center gap-1.5 flex-wrap'>
+														{openedWork.technologies.map((tech, index) => (
+															<div
+																key={index}
+																className='py-1 px-4 rounded-full border border-border-ballpit text-sm hover:bg-border-ballpit light:hover:text-base cursor-pointer'
+															>
+																{tech}
+															</div>
+														))}
+													</div>
+												</>
+											)}
 										</div>
 									</div>
 								</motion.div>

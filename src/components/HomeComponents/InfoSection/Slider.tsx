@@ -1,11 +1,11 @@
 import { animate, motion, useMotionValue } from 'framer-motion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
+import Chevron from '../../../assets/svgs/Chevron'
 import { useTranslate } from '../../../hooks/useTranslate'
 import { setSlide } from '../../../redux/slices/sliderSlice'
 import { useAppDispatch, useAppSelector } from '../../../redux/store'
 import { slides } from '../../../utils/arrays'
-import Chevron from '../../svgs/Chevron'
 
 const Slider = () => {
 	const dispatch = useAppDispatch()
