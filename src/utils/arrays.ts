@@ -184,7 +184,6 @@ export const portfolioWorks = {
 				ratio: 'landscape',
 				name: 'Portfolio',
 				text: 'portfolioPortfolio',
-				mainLink: '...',
 				githubLink: 'https://github.com/ArcticGa/Portfolio',
 				technologies: [
 					'React',
