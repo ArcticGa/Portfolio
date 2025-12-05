@@ -11,25 +11,69 @@ const Home = () => {
 	const { scene } = useAppSelector(state => state.scenesSlice)
 	const prevScene = useRef(scene)
 
+	const isScrolling = useRef(false)
+	const startY = useRef(0)
+
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
-
 		return () => {
 			document.body.style.overflow = 'auto'
 		}
 	}, [])
 
-	const handleScroll = (e: WheelEvent) => {
+	// Desktop Scroll
+	const handleWheel = (e: WheelEvent) => {
+		if (isScrolling.current) return
+		if (scene === 1) return
+
 		if (e.deltaY > 0) {
+			isScrolling.current = true
 			dispatch(setScene(1))
 			localStorage.setItem('scene', '1')
+
+			setTimeout(() => {
+				isScrolling.current = false
+			}, 800)
+		}
+	}
+
+	// Mobile Swap
+	const handleTouchStart = (e: TouchEvent) => {
+		startY.current = e.touches[0].clientY
+	}
+
+	const handleTouchMove = (e: TouchEvent) => {
+		if (isScrolling.current) return
+		if (scene === 1) return
+
+		const delta = startY.current - e.touches[0].clientY
+
+		if (delta > 50) {
+			isScrolling.current = true
+
+			dispatch(setScene(1))
+			localStorage.setItem('scene', '1')
+
+			setTimeout(() => {
+				isScrolling.current = false
+			}, 800)
 		}
 	}
 
 	useEffect(() => {
-		window.addEventListener('wheel', handleScroll, { passive: false })
-		return () => window.removeEventListener('wheel', handleScroll)
-	}, [])
+		// desktop
+		window.addEventListener('wheel', handleWheel, { passive: true })
+
+		// mobile
+		window.addEventListener('touchstart', handleTouchStart, { passive: true })
+		window.addEventListener('touchmove', handleTouchMove, { passive: true })
+
+		return () => {
+			window.removeEventListener('wheel', handleWheel)
+			window.removeEventListener('touchstart', handleTouchStart)
+			window.removeEventListener('touchmove', handleTouchMove)
+		}
+	}, [scene])
 
 	const direction = scene > prevScene.current ? 1 : -1
 	prevScene.current = scene

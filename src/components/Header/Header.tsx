@@ -61,11 +61,12 @@ const Header = () => {
 	}
 
 	const handleBackHome = () => {
-		navigate('/')
 		if (scene === 1) {
 			dispatch(setScene(0))
 			localStorage.setItem('scene', '0')
 		}
+
+		navigate('/')
 	}
 
 	const handleCloseFromSidebar = () => {
