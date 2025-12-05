@@ -43,7 +43,7 @@ const PortfolioNav = ({ works, setWorks }: PortfolioNavProps) => {
 							<div
 								key={index}
 								onClick={() => setWorks(map[item])}
-								className={`py-1.5 px-6 max-sm:text-sm rounded-full cursor-pointer select-none ${
+								className={`py-1.5 px-6 max-sm:text-sm rounded-full cursor-pointer ${
 									works === value
 										? 'bg-[#8670c4] text-base'
 										: 'bg-base text-primary'

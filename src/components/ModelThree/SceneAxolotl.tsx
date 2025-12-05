@@ -11,7 +11,11 @@ const SceneAxolotl = () => {
 
 			<ModelFox />
 
-			<OrbitControls enablePan={false} enableZoom={false} />
+			<OrbitControls
+				enablePan={false}
+				enableZoom={false}
+				enableRotate={window.innerWidth < 700 ? false : true}
+			/>
 		</Canvas>
 	)
 }

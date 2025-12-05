@@ -69,7 +69,7 @@ const Portfolio = () => {
 										/>
 
 										<motion.div
-											className='absolute inset-0 flex items-center justify-center text-base light:text-primary text-3xl font-bold select-none'
+											className='absolute inset-0 flex items-center justify-center text-base light:text-primary text-3xl font-bold'
 											variants={{
 												initial: { opacity: 0 },
 												hover: { opacity: 1 },

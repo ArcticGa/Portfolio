@@ -135,7 +135,7 @@ const Header = () => {
 			</div>
 
 			<div
-				className={`md:hidden cursor-pointer z-50`}
+				className={`md:hidden cursor-pointer py-4 px-1 z-50`}
 				onClick={() => dispatch(setSidebar(!isSidebarOpened))}
 			>
 				<motion.div

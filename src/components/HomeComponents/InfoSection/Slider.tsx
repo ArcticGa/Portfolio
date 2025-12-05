@@ -77,26 +77,32 @@ const Slider = () => {
 						<Chevron />
 					</div>
 				</div>
-				<div className='text-4xl font-bold select-none tracking-[8px] max-sm:tracing-[4px] max-sm:text-2xl'>
+				<div className='text-4xl font-bold text-base light:text-primary tracking-[8px] max-sm:tracing-[4px] max-sm:text-2xl'>
 					{t(slides[activeSlide].title)}
 				</div>
 			</div>
 
 			<div
-				className='relative w-full flex items-center justify-center select-none ml-70 mb-12 max-2xl:ml-100 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
+				className='relative w-full flex items-center justify-center ml-70 mb-12 max-2xl:ml-100 max-xl:ml-90 max-lg:ml-130 max-md:ml-160 max-sm:ml-135'
 				ref={containerRef}
 			>
 				<motion.div
 					className='flex gap-5 h-[265px]'
 					style={{ x }}
 					drag='x'
-					dragElastic={0.08}
-					dragMomentum={false}
-					onDragEnd={() => {
-						const currentX = x.get()
-						const slideWidth = 450
-						const newIndex = Math.round(-currentX / slideWidth)
-						goTo(newIndex)
+					dragElastic={0.15}
+					dragMomentum={true}
+					onDragEnd={(event, info) => {
+						const offsetX = info.offset.x
+						const velocityX = info.velocity.x
+						const threshold = 80
+						if (offsetX < -threshold || velocityX < -500) {
+							goTo(activeSlide + 1)
+						} else if (offsetX > threshold || velocityX > 500) {
+							goTo(activeSlide - 1)
+						} else {
+							goTo(activeSlide)
+						}
 					}}
 				>
 					{slides.map((slide, i) => {
@@ -132,12 +138,12 @@ const Slider = () => {
 				</motion.div>
 			</div>
 			<div className='max-w-[420px]'>
-				<div className='text-sm h-22 select-none'>
+				<div className='text-sm h-22 text-base light:text-primary'>
 					{t(slides[activeSlide].text)}
 				</div>
 				<button
 					onClick={() => navigate(slides[activeSlide].link)}
-					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full cursor-pointer select-none'
+					className='bg-base light:bg-primary text-primary light:text-base w-3/4 text-start px-5 py-2.5 rounded-full cursor-pointer'
 				>
 					{t('btnOpenPage')}
 				</button>

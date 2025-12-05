@@ -44,7 +44,7 @@ const IntroScreen = ({ onFinish }: { onFinish: () => void }) => {
 			animate={{ opacity: 1 }}
 		>
 			<motion.div
-				className='text-5xl font-texts font-semibold tracking-[0.3em] flex gap-2 min-h-24'
+				className='text-5xl max-sm:text-4xl flex items-center justify-center font-texts font-semibold gap-6 min-h-24'
 				variants={container}
 				initial='hidden'
 				animate={lettersVisible ? 'visible' : 'hidden'}

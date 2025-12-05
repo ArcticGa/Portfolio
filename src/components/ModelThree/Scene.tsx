@@ -40,6 +40,7 @@ export default function Scene() {
 			<OrbitControls
 				enableZoom={false}
 				enablePan={false}
+				enableRotate={window.innerWidth < 700 ? false : true}
 				enabled={isIntroDone}
 			/>
 		</Canvas>

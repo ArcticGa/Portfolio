@@ -97,7 +97,7 @@ const Home = () => {
 
 	return (
 		<main>
-			<div className='absolute top-0 left-0 w-full h-screen select-none pointer-events-none'>
+			<div className='absolute top-0 left-0 w-full h-screen pointer-events-none'>
 				<Particles
 					particleColors={['#7e00e6']}
 					particleCount={600}

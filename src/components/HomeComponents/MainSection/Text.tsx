@@ -30,7 +30,7 @@ const Text = () => {
 	}
 
 	return (
-		<div className='relative flex-1 flex flex-col items-start justify-center pb-22 max-lg:items-center max-lg:justify-start max-lg:p-0'>
+		<div className='relative flex-1 max-sm:flex-1/4 max-sm:mt-4 flex flex-col items-start justify-center pb-22 max-lg:items-center max-lg:justify-start max-lg:p-0'>
 			<motion.div
 				className='max-w-35 w-full text-center overflow-hidden rounded-md bg-base text-primary light:bg-primary light:text-base'
 				initial='hidden'
@@ -51,7 +51,7 @@ const Text = () => {
 				</AnimatePresence>
 			</motion.div>
 			<motion.h1
-				className='font-texts text-6xl my-10 font-bold max-lg:my-5 max-lg:text-center max-sm:text-5xl max-sm:my-3'
+				className='font-texts text-6xl my-10 font-bold max-lg:my-5 max-lg:text-center max-sm:text-5xl max-sm:my-3 text-base light:text-primary'
 				initial='hidden'
 				animate='visible'
 				variants={mainVariants}
