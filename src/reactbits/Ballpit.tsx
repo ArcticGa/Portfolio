@@ -229,12 +229,21 @@ class X {
 
 	#onIntersection(entries: IntersectionObserverEntry[]) {
 		this.#isAnimating = entries[0].isIntersecting
-		this.#isAnimating ? this.#startAnimation() : this.#stopAnimation()
+
+		if (this.#isAnimating) {
+			this.#startAnimation()
+		} else {
+			this.#stopAnimation()
+		}
 	}
 
 	#onVisibilityChange() {
 		if (this.#isAnimating) {
-			document.hidden ? this.#stopAnimation() : this.#startAnimation()
+			if (document.hidden) {
+				this.#stopAnimation()
+			} else {
+				this.#startAnimation()
+			}
 		}
 	}
 
@@ -451,6 +460,8 @@ class W {
 }
 
 class Y extends MeshPhysicalMaterial {
+	defines: Record<string, string> = {}
+
 	uniforms: { [key: string]: { value: any } } = {
 		thicknessDistortion: { value: 0.1 },
 		thicknessAmbient: { value: 0 },
