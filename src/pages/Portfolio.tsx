@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { lazy, Suspense, useState } from 'react'
+import { lazy, useState } from 'react'
 import ClosePageBtn from '../components/BaseComponents/ClosePageBtn'
 import PortfolioNav from '../components/BaseComponents/PortfolioNav'
 import { useTranslate } from '../hooks/useTranslate'
@@ -85,16 +85,14 @@ const Portfolio = () => {
 					</AnimatePresence>
 
 					{/* Popup Component */}
-					<Suspense fallback={null}>
-						<AnimatePresence>
-							{openedWork && (
-								<WorkPopup
-									openedWork={openedWork}
-									setOpenedWork={setOpenedWork}
-								/>
-							)}
-						</AnimatePresence>
-					</Suspense>
+					<AnimatePresence>
+						{openedWork && (
+							<WorkPopup
+								openedWork={openedWork}
+								setOpenedWork={setOpenedWork}
+							/>
+						)}
+					</AnimatePresence>
 				</div>
 
 				{/* Bottom Navigation */}

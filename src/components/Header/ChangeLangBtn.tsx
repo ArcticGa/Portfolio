@@ -3,7 +3,7 @@ import { setLang, type Lang } from '../../redux/slices/headerSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 
 const currentLangStyles =
-	'bg-base text-primary light:bg-primary light:text-base'
+	'bg-base text-primary light:text-base light:bg-primary '
 
 const ChangeLangBtn = ({ selectedLang }: { selectedLang: string }) => {
 	const dispatch = useAppDispatch()

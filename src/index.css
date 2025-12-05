@@ -56,6 +56,11 @@
 }
 
 /* ----------------------- БАЗОВЫЕ СТИЛИ ----------------------- */
+*,
+html {
+	transition: color 0.3s ease;
+}
+
 html,
 body,
 #root {
@@ -63,13 +68,6 @@ body,
 	width: 100%;
 	margin: 0;
 	padding: 0;
-}
-
-html {
-	transition: background-color 0.3s ease, color 0.3s ease;
-}
-* {
-	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ----------------------- CSS ----------------------- */

@@ -15,13 +15,14 @@ const Home = () => {
 	const startY = useRef(0)
 
 	useEffect(() => {
-		document.body.style.overflow = 'hidden'
+		if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+			document.body.style.overflow = 'hidden'
+		}
 		return () => {
 			document.body.style.overflow = 'auto'
 		}
 	}, [])
 
-	// Desktop Scroll
 	const handleWheel = (e: WheelEvent) => {
 		if (isScrolling.current) return
 		if (scene === 1) return
@@ -37,22 +38,21 @@ const Home = () => {
 		}
 	}
 
-	// Mobile Swap
 	const handleTouchStart = (e: TouchEvent) => {
 		startY.current = e.touches[0].clientY
 	}
 
 	const handleTouchMove = (e: TouchEvent) => {
 		if (isScrolling.current) return
-		if (scene === 1) return
+		const currentY = e.touches[0].clientY
+		const delta = startY.current - currentY
 
-		const delta = startY.current - e.touches[0].clientY
-
-		if (delta > 50) {
+		if (delta > 50 && scene === 0) {
 			isScrolling.current = true
-
 			dispatch(setScene(1))
 			localStorage.setItem('scene', '1')
+
+			e.preventDefault()
 
 			setTimeout(() => {
 				isScrolling.current = false
@@ -61,12 +61,10 @@ const Home = () => {
 	}
 
 	useEffect(() => {
-		// desktop
 		window.addEventListener('wheel', handleWheel, { passive: true })
 
-		// mobile
 		window.addEventListener('touchstart', handleTouchStart, { passive: true })
-		window.addEventListener('touchmove', handleTouchMove, { passive: true })
+		window.addEventListener('touchmove', handleTouchMove, { passive: false })
 
 		return () => {
 			window.removeEventListener('wheel', handleWheel)
