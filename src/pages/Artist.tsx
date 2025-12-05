@@ -94,8 +94,8 @@ const Artist = () => {
 					<div className='absolute top-0 left-1/2 border-l-2 h-full border-hr-info' />
 				</div>
 
-				<div className='flex justify-center'>
-					<div className='flex justify-center items-center w-130 h-130 border border-hr-info rounded-full max-md:w-80 max-md:h-80 max-sm:pointer-events-none'>
+				<div className='flex justify-center max-sm:pointer-events-none'>
+					<div className='flex justify-center items-center w-130 h-130 border border-hr-info rounded-full max-md:w-80 max-md:h-80 '>
 						<SceneAxolotl />
 					</div>
 				</div>
