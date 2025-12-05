@@ -38,7 +38,7 @@ const Coding = () => {
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: true, amount: 0.3 }}
-				className='text-center text-7xl font-bold my-40 max-lg:my-30 max-sm:my-20'
+				className='text-center text-7xl text-base light:text-primary font-bold my-40 max-lg:my-30 max-sm:my-20 max-sm:text-6xl'
 			>
 				{t('codingTitleMainSection')}
 			</motion.div>
@@ -58,11 +58,13 @@ const Coding = () => {
 					{skillsLevelArr.map((skill, index) => (
 						<>
 							<div key={index} className='flex items-center'>
-								<div className='bg-base w-3 h-3 rounded-full mr-5' />
-								<div className='text-lg'>{t(skill)}</div>
+								<div className='bg-base light:bg-primary w-3 h-3 rounded-full mr-5' />
+								<div className='text-lg text-base light:text-primary'>
+									{t(skill)}
+								</div>
 							</div>
 							{skillsLevelArr.length !== index + 1 && (
-								<div className='h-4 w-0.5 bg-base ml-[5px]' />
+								<div className='h-4 w-0.5 bg-base light:bg-primary ml-[5px]' />
 							)}
 						</>
 					))}
@@ -78,7 +80,9 @@ const Coding = () => {
 			>
 				{devSkills.map((skill, i) => (
 					<SpotlightCard key={i} className='flex flex-col justify-center'>
-						<div className='text-xl font-bold mb-2'>{skill.name}</div>
+						<div className='text-xl font-bold mb-2 text-base light:text-primary'>
+							{skill.name}
+						</div>
 						<div className='text-skill-dark light:text-skill-light'>
 							{t(skill.level)}
 						</div>

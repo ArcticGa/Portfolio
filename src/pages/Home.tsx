@@ -15,9 +15,7 @@ const Home = () => {
 	const startY = useRef(0)
 
 	useEffect(() => {
-		if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-			document.body.style.overflow = 'hidden'
-		}
+		document.body.style.overflow = 'hidden'
 		return () => {
 			document.body.style.overflow = 'auto'
 		}
@@ -44,15 +42,15 @@ const Home = () => {
 
 	const handleTouchMove = (e: TouchEvent) => {
 		if (isScrolling.current) return
-		const currentY = e.touches[0].clientY
-		const delta = startY.current - currentY
+		if (scene === 1) return
 
-		if (delta > 50 && scene === 0) {
+		const delta = startY.current - e.touches[0].clientY
+
+		if (delta > 50) {
 			isScrolling.current = true
+
 			dispatch(setScene(1))
 			localStorage.setItem('scene', '1')
-
-			e.preventDefault()
 
 			setTimeout(() => {
 				isScrolling.current = false
@@ -64,7 +62,7 @@ const Home = () => {
 		window.addEventListener('wheel', handleWheel, { passive: true })
 
 		window.addEventListener('touchstart', handleTouchStart, { passive: true })
-		window.addEventListener('touchmove', handleTouchMove, { passive: false })
+		window.addEventListener('touchmove', handleTouchMove, { passive: true })
 
 		return () => {
 			window.removeEventListener('wheel', handleWheel)

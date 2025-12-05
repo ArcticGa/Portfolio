@@ -69,10 +69,12 @@ const Artist = () => {
 				viewport={{ once: true, amount: 0.3 }}
 				className='flex items-end px-50 max-lg:px-20 max-md:px-4 max-md:flex-col mb-40 max-md:items-center'
 			>
-				<span className='text-6xl font-bold mr-40 max-md:text-4xl max-md:mr-0'>
+				<span className='text-6xl font-bold mr-40 max-md:text-4xl max-md:mr-0 text-base light:text-primary'>
 					{t('artistShowCaseTitle')}
 				</span>
-				<span>{t('artistShowCaseText')}</span>
+				<span className='text-base light:text-primary'>
+					{t('artistShowCaseText')}
+				</span>
 			</motion.div>
 
 			<InfoBlockPage

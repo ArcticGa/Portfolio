@@ -38,10 +38,14 @@ const InfoBlockPage = ({
 				viewport={{ once: true, amount: 0.3 }}
 				className='flex-1 pr-14 flex items-center justify-between text-4xl font-bold max-md:mb-8 max-md:pr-0'
 			>
-				<div className='text-6xl font-light'>{numberBlock}</div>
+				<div className='text-6xl font-light text-base light:text-primary'>
+					{numberBlock}
+				</div>
 
 				{title && (
-					<div className='max-md:text-3xl max-md:max-w-[250px]'>{t(title)}</div>
+					<div className='max-md:text-3xl max-md:max-w-[250px] text-base light:text-primary'>
+						{t(title)}
+					</div>
 				)}
 			</motion.div>
 
@@ -53,10 +57,12 @@ const InfoBlockPage = ({
 				className='flex-1 pl-14 border-l-2 border-hr-info max-md:border-l-0 max-md:border-t-2 max-md:pl-0 max-md:pt-8'
 			>
 				{secondTitle && (
-					<div className='text-3xl font-bold mb-4'>{t(secondTitle)}</div>
+					<div className='text-3xl font-bold mb-4 text-base light:text-primary'>
+						{t(secondTitle)}
+					</div>
 				)}
 
-				{text && <div>{t(text)}</div>}
+				{text && <div className='text-base light:text-primary'>{t(text)}</div>}
 				{children && children}
 			</motion.div>
 		</div>

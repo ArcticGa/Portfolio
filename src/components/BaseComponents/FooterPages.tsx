@@ -57,10 +57,10 @@ const FooterPages = () => {
 			>
 				<div className='flex items-center justify-between max-lg:flex-col'>
 					<div className='max-lg:text-center max-sm:mb-40'>
-						<div className='text-9xl font-bold mb-16 tracking-[6px] max-lg:text-7xl max-lg:tracking-[4px] max-lg:mb-8 max-2xl:text-8xl'>
+						<div className='text-9xl font-bold mb-16 text-base light:text-primary tracking-[6px] max-lg:text-7xl max-lg:tracking-[4px] max-lg:mb-8 max-2xl:text-8xl'>
 							{t('footerTitle')}
 						</div>
-						<div className='max-w-130 mb-32 max-lg:mb-8'>
+						<div className='max-w-130 mb-32 text-base light:text-primary max-lg:mb-8'>
 							{t('footerDescription')}
 						</div>
 
@@ -110,9 +110,13 @@ const FooterPages = () => {
 			</motion.div>
 
 			<div className='bg-backgroundFooter light:bg-base px-40 py-4 text-sm flex justify-between items-center max-lg:flex-col max-lg:px-0 max-lg:py-3'>
-				<div className='text-lg'>@ Alexander DEVALEX {date.getFullYear()}</div>
+				<div className='text-lg text-base light:text-primary'>
+					@ Alexander DEVALEX {date.getFullYear()}
+				</div>
 				<div>
-					<span>Background Images created with</span>
+					<span className='text-base light:text-primary'>
+						Background Images created with
+					</span>
 					<a
 						className='text-link text-lg ml-2'
 						href='https://leonardo.ai'
@@ -122,7 +126,7 @@ const FooterPages = () => {
 					</a>
 				</div>
 				<div className='flex items-center gap-2'>
-					<span>Thank you</span>
+					<span className='text-base light:text-primary'>Thank you</span>
 					<a
 						className='text-link text-lg'
 						href='https://reactbits.dev'

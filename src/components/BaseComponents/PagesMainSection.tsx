@@ -71,6 +71,7 @@ const PagesMainSection = ({
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.3 }}
+						className='text-base light:text-primary'
 					>
 						{t(startText)}
 					</motion.div>
@@ -80,7 +81,7 @@ const PagesMainSection = ({
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.3 }}
-						className='text-7xl font-bold py-6 max-sm:text-5xl'
+						className='text-7xl font-bold py-6 max-sm:text-5xl text-base light:text-primary'
 					>
 						{t(title)}
 					</motion.div>
@@ -90,6 +91,7 @@ const PagesMainSection = ({
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.3 }}
+						className='text-base light:text-primary'
 					>
 						{t(description)}
 					</motion.div>

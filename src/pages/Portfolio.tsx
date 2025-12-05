@@ -23,10 +23,12 @@ const Portfolio = () => {
 			<ClosePageBtn />
 			<div className='h-[calc(100vh - 105px)]'>
 				<div className='mt-header-hight px-50 pt-8 max-sm:pb-24 max-2xl:px-20 max-xl:px-10 max-lg:px-8 max-lg:pt-4 max-sm:pt-2'>
-					<div className='text-7xl max-lg:text-5xl font-bold'>
+					<div className='text-7xl text-base light:text-primary max-lg:text-5xl font-bold'>
 						{selected.name}
 					</div>
-					<div className='my-6 max-md:my-4'>{t('portfolioSubtitle')}</div>
+					<div className='my-6 text-base light:text-primary max-md:my-4'>
+						{t('portfolioSubtitle')}
+					</div>
 
 					<AnimatePresence mode='wait'>
 						<motion.div

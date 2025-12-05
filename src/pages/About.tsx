@@ -38,7 +38,7 @@ const About = () => {
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: true, amount: 0.3 }}
-				className='text-center text-6xl font-bold mb-22'
+				className='text-center text-6xl font-bold mb-22 text-base light:text-primary max-sm:text-5xl'
 			>
 				{t('aboutSkillsAndProjectsTitle')}
 			</motion.div>
