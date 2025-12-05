@@ -92,7 +92,7 @@ const Slider = () => {
 					drag='x'
 					dragElastic={0.15}
 					dragMomentum={true}
-					onDragEnd={(event, info) => {
+					onDragEnd={(_, info) => {
 						const offsetX = info.offset.x
 						const velocityX = info.velocity.x
 						const threshold = 80
