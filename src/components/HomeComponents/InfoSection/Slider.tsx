@@ -107,7 +107,7 @@ const Slider = () => {
 				>
 					{slides.map((slide, i) => {
 						const isActive = i === activeSlide
-						const height = isActive ? 265 : 215
+						const height = isActive || window.innerWidth < 700 ? 265 : 215
 
 						return (
 							<motion.div

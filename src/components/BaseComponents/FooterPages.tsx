@@ -56,7 +56,7 @@ const FooterPages = () => {
 				className='px-50 max-2xl:px-20 max-xl:px-10 max-lg:px-8 h-[calc(100vh-105px-40px)] max-lg:h-auto max-lg:pt-20'
 			>
 				<div className='flex items-center justify-between max-lg:flex-col'>
-					<div className='max-lg:text-center'>
+					<div className='max-lg:text-center max-sm:mb-40'>
 						<div className='text-9xl font-bold mb-16 tracking-[6px] max-lg:text-7xl max-lg:tracking-[4px] max-lg:mb-8 max-2xl:text-8xl'>
 							{t('footerTitle')}
 						</div>
@@ -83,27 +83,29 @@ const FooterPages = () => {
 						</div>
 					</div>
 
-					<motion.div
-						variants={fadeUpVariant}
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true, amount: 0.3 }}
-						className='relative overflow-hidden h-[500px] max-2xl:h-[450px] max-sm:h-[270px] w-1/2 mt-30 max-2xl:mt-12 border border-border-ballpit rounded-2xl max-lg:mt-8 max-lg:w-full max-lg:h-[340px] max-lg:mb-12'
-					>
-						<div className='h-full w-full overflow-hidden'>
-							<Ballpit
-								count={100}
-								gravity={0}
-								friction={1}
-								wallBounce={0.95}
-								followCursor={false}
-								colors={['#3726b5', '#fff', '#424242', '#221f4d']}
-								lightIntensity={200}
-								minSize={0.7}
-								ambientIntensity={2}
-							/>
-						</div>
-					</motion.div>
+					{window.innerWidth > 700 && (
+						<motion.div
+							variants={fadeUpVariant}
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true, amount: 0.3 }}
+							className='relative overflow-hidden h-[500px] max-2xl:h-[450px] max-sm:h-[270px] w-1/2 mt-30 max-2xl:mt-12 border border-border-ballpit rounded-2xl max-lg:mt-8 max-lg:w-full max-lg:h-[340px] max-lg:mb-12'
+						>
+							<div className='h-full w-full overflow-hidden'>
+								<Ballpit
+									count={100}
+									gravity={0}
+									friction={1}
+									wallBounce={0.95}
+									followCursor={false}
+									colors={['#3726b5', '#fff', '#424242', '#221f4d']}
+									lightIntensity={200}
+									minSize={0.7}
+									ambientIntensity={2}
+								/>
+							</div>
+						</motion.div>
+					)}
 				</div>
 			</motion.div>
 
